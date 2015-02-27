@@ -10,6 +10,6 @@ def index(request):
     return render(request, 'rango/index.html', context_dict)
 
 def about(request):
-    return HttpResponse("Range says here is the about page")
+    return HttpResponse("Rango says here is the about page")
 
 # Create your views here.
