@@ -12,12 +12,9 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 from os.path import join
 
+SETTINGS_DIR = os.path.dirname(__file__)
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
-PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
-PROJECT_PATH = os.path.abspath(PROJECT_PATH)
-
-DATABASE_PATH = os.path.join(PROJECT_PATH, 'rango.db')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
@@ -67,7 +64,7 @@ WSGI_APPLICATION = 'communityfundproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': DATABASE_PATH,
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
