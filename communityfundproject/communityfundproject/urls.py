@@ -12,3 +12,10 @@ urlpatterns = patterns('',
     url(r'^communityfund/', include('communityfund.urls')),
 
 )
+
+if settings.DEBUG:
+    urlpatterns += patterns(
+        'django.views.static',
+        (r'^media/(?P<path>.*)',
+        'serve',
+        {'document_root': settings.MEDIA_ROOT}), )
