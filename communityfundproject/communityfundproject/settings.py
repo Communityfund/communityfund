@@ -14,6 +14,9 @@ from os.path import join
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
+PROJECT_PATH = os.path.abspath(PROJECT_PATH)
+
 DATABASE_PATH = os.path.join(PROJECT_PATH, 'rango.db')
 
 # Quick-start development settings - unsuitable for production
