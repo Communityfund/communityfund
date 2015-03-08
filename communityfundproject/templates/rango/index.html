@@ -22,7 +22,7 @@
 	    {% if top_5_pages %}
 			<ul>
 				{% for page in top_5_pages %}
-				<li><a href="{{ page.url }}">{{ page.title }}: {{ page.views }} views</a></li>
+				<li><a href="{{ page.url }}">{{ page.title }}</a>: {{ page.views }} views</li>
 				{% endfor %}
 			</ul>
 		{% endif %}
