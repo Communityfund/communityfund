@@ -9,6 +9,10 @@ def index(request):
     # Note the key boldmessage is the same as {{ boldmessage }} in the template
     category_list = Category.objects.order_by('-likes')[:5]
     context_dict = {'categories': category_list}
+    
+    top_pages = Pages.objects.order_by('-views')[:5]
+    context_dict['top_5_pages'] = top_pages
+    
     return render(request, 'rango/index.html', context_dict)
 
 def about(request):
