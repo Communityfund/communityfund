@@ -9,6 +9,7 @@ class Communities(models.Model):
         
 class Users(models.Model):
     userName = models.CharField(max_length=32, unique=True)
+    emailAddress = models.EmailField()
     password = models.CharField(max_length=32)
     community = models.ForeignKey(Communities, limit_choices_to={'id'})
     
