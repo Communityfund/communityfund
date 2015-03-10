@@ -23,7 +23,7 @@ class Interests(models.Model):
         
 class CommunityProjects(models.Model):
     projectName = models.CharField(max_length=32, primary_key=True)
-    community = models.ForeignKey(Communities, limit_choices_to={'id'})
+    community = models.ForeignKey(Communities)
     interest = models.ForeignKey(Interests)
     initiator = models.ForeignKey(Usernames, limit_choices_to={'userName'})
     goal = models.IntegerField()
