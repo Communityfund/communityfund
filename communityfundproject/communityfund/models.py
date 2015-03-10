@@ -17,7 +17,7 @@ class Users(models.Model):
 
 class Projects(models.Model):
     projectName = models.CharField(max_length=32, primary_key=True)
-    community = models.ForeignKey(Communities, limit_choices_to={'id'})
+    community = models.ForeignKey(Communities)
     initiator = models.ForeignKey(Users, limit_choices_to={'userName'})
     goal = models.IntegerField()
     amountFunded = models.IntegerField()
@@ -28,7 +28,7 @@ class Projects(models.Model):
 
 class Payments(models.Model):
     backer = models.ForeignKey(Users, limit_choices_to={'userName'})
-    project = models.ForeignKey(Projects, limit_choices_to={'id'})
+    projectID = models.ForeignKey(Projects)
     amount = models.IntegerField()
     isDonation = models.BinaryField()
     timestamp = models.DateField()
