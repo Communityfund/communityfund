@@ -26,23 +26,23 @@ class Projects(models.Model):
     def __unicode__(self):
         return self.projectName + " - " + self.community + ", " + self.province
 
-class Payments(models.Model):
-    backer = models.ForeignKey(Users, limit_choices_to={'userName'})
-    projectID = models.ForeignKey(Projects)
-    amount = models.IntegerField()
-    isDonation = models.BinaryField()
-    timestamp = models.DateField()
+#class Payments(models.Model):
+#    backer = models.ForeignKey(Users, limit_choices_to={'userName'})
+#    projectID = models.ForeignKey(Projects)
+#    amount = models.IntegerField()
+#    isDonation = models.BinaryField()
+#    timestamp = models.DateField()
     
-    def __unicode__(self):
-        return self.backer + ", " + self.project
+#    def __unicode__(self):
+#        return self.backer + ", " + self.project
 
-class Comments(models.Model):
-    commenter = models.ForeignKey(Users, limit_choices_to={'userName'}, related_name='commenter')
-    recipient = models.ForeignKey(Users, limit_choices_to={'userName'}, related_name='recipient')  
-    text = models.CharField(max_length=256)
-    timestamp = models.DateField()
+#class Comments(models.Model):
+#    commenter = models.ForeignKey(Users, limit_choices_to={'userName'}, related_name='commenter')
+#    recipient = models.ForeignKey(Users, limit_choices_to={'userName'}, related_name='recipient')  
+#    text = models.CharField(max_length=256)
+#    timestamp = models.DateField()
     
-    def __unicide__(self):
-        return self.commenter + " to " + self.recipient + ": " + self.text
+#    def __unicide__(self):
+#        return self.commenter + " to " + self.recipient + ": " + self.text
         
 # Create your models here.
