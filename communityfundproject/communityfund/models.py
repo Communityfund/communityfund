@@ -38,8 +38,8 @@ class Payments(models.Model):
         return self.backer + ", " + self.project
 
 class Comments(models.Model):
-    commenter = models.ForeignKey(Users, limit_choices_to={'userName'})
-    recipient = models.ForeignKey(Users, limit_choices_to={'userName'})  
+    commenter = models.ForeignKey(Users, limit_choices_to={'userName'}, related_name='commenter')
+    recipient = models.ForeignKey(Users, limit_choices_to={'userName'}, related_name='recipient')  
     text = models.CharField(max_length=256)
     timestamp = models.DateField()
     
