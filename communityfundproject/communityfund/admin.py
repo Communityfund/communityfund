@@ -1,9 +1,9 @@
 from django.contrib import admin
-from communityfund.models import Communities, Users, Projects, Interests
+from communityfund.models import Community, Usernames, CommunityProjects, Interest
 
-admin.site.register(Communities)
-admin.site.register(communityfund.models.Users)
-admin.site.register(communityfund.models.Projects)
-admin.site.register(Interests)
+admin.site.register(Community)
+admin.site.register(Usernames)
+admin.site.register(CommunityProjects)
+admin.site.register(Interest)
 
 # Register your models here.

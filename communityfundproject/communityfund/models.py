@@ -7,7 +7,7 @@ class Communities(models.Model):
     def __unicode__(self):
         return self.community + ", " + self.province
         
-class Users(models.Model):
+class Usernames(models.Model):
     userName = models.CharField(max_length=32, unique=True, primary_key=True)
     emailAddress = models.EmailField()
     password = models.CharField(max_length=32)
@@ -21,7 +21,7 @@ class Interests(models.Model):
     def __unicode__(self):
         return self.interest
         
-class Projects(models.Model):
+class CommunityProjects(models.Model):
     projectName = models.CharField(max_length=32, primary_key=True)
     community = models.ForeignKey(Communities)
     interest = models.ForeignKey(Interests)
