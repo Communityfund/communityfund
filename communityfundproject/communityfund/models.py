@@ -25,11 +25,11 @@ class Projects(models.Model):
     backers = models.IntegerField()
     
     def __unicode__(self):
-        return self.projectName + " - " self.community + ", " + self.province
+        return self.projectName + " - " + self.community + ", " + self.province
 
 class Payments(models.Model):
-    backer = models.ForeignKey(Users, limit_choices_to{'userName'})
-    project = models.ForeignKey(Projects, limit_choices_to{'id'})
+    backer = models.ForeignKey(Users, limit_choices_to={'userName'})
+    project = models.ForeignKey(Projects, limit_choices_to={'id'})
     amount = models.IntegerField()
     isDonation = models.BinaryField()
     timestamp = models.DateField()
@@ -38,8 +38,8 @@ class Payments(models.Model):
         return self.backer + ", " + self.project
 
 class Comments(models.Model):
-    commenter = models.ForeignKey(Users, limit_choices_to{'userName'})
-    recipient = models.ForeignKey(Users, limit_choices_to{'userName'})  
+    commenter = models.ForeignKey(Users, limit_choices_to={'userName'})
+    recipient = models.ForeignKey(Users, limit_choices_to={'userName'})  
     text = models.CharField(max_length=256)
     timestamp = models.DateField()
     
