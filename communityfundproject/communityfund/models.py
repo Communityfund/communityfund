@@ -1,23 +1,23 @@
 from django.db import models
 
-class Communities(models.Model):
-    community = models.CharField(max_length=32)
-    province = models.CharField(max_length=32)
+#class Communities(models.Model):
+#    community = models.CharField(max_length=32)
+#    province = models.CharField(max_length=32)
     
-    def __unicode__(self):
-        return self.name + ", " + self.province
+#    def __unicode__(self):
+#        return self.name + ", " + self.province
         
 class Users(models.Model):
     userName = models.CharField(max_length=32, unique=True)
     password = models.CharField(max_length=32)
-    community = models.ForeignKey(Communities, limit_choices_to={'id'})
+    #community = models.ForeignKey(Communities, limit_choices_to={'id'})
     
     def __unicode__(self):
         return self.userName
 
 class Projects(models.Model):
     projectName = models.CharField(max_length=32, primary_key=True)
-    community = models.ForeignKey(Communities, limit_choices_to={'id'})
+    #community = models.ForeignKey(Communities, limit_choices_to={'id'})
     initiator = models.ForeignKey(Users, limit_choices_to={'userName'})
     goal = models.IntegerField()
     amountFunded = models.IntegerField()
