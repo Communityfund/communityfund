@@ -8,10 +8,9 @@ class Communities(models.Model):
         return self.community + ", " + self.province
         
 class Users(models.Model):
-    userName = models.CharField(max_length=32, unique=True)
+    userName = models.CharField(max_length=32, unique=True, primary_key=True)
     emailAddress = models.EmailField()
     password = models.CharField(max_length=32)
-    community = models.ForeignKey(Communities, limit_choices_to={'community'})
     
     def __unicode__(self):
         return self.userName
@@ -24,9 +23,9 @@ class Interests(models.Model):
         
 class Projects(models.Model):
     projectName = models.CharField(max_length=32, primary_key=True)
-    community = models.ForeignKey(Communities, limit_choices_to={'community'})
+    community = models.ForeignKey(Communities)
     interest = models.ForeignKey(Interests)
-    initiator = models.ForeignKey(Users, limit_choices_to={'userName'})
+    initiator = models.ForeignKey(Users)
     goal = models.IntegerField()
     amountFunded = models.IntegerField()
     backers = models.IntegerField()
