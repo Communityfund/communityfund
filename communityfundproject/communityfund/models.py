@@ -5,7 +5,7 @@ class Communities(models.Model):
     province = models.CharField(max_length=32)
     
     def __unicode__(self):
-        return self.name + ", " + self.province
+        return self.community + ", " + self.province
         
 class Users(models.Model):
     userName = models.CharField(max_length=32, unique=True)
@@ -26,6 +26,12 @@ class Projects(models.Model):
     def __unicode__(self):
         return self.projectName + " - " + self.community + ", " + self.province
 
+class Interests(model.Model):
+    interest = models.CharField(max_length=32)
+    
+    def __unicode__(self):
+        return self.interest
+        
 #class Payments(models.Model):
 #    backer = models.ForeignKey(Users, limit_choices_to={'userName'})
 #    projectID = models.ForeignKey(Projects)
