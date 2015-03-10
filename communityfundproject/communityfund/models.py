@@ -25,7 +25,7 @@ class CommunityProjects(models.Model):
     projectName = models.CharField(max_length=32, primary_key=True)
     community = models.ForeignKey(Communities)
     interest = models.ForeignKey(Interests)
-    initiator = models.ForeignKey(Users)
+    initiator = models.ForeignKey(Usernames)
     goal = models.IntegerField()
     amountFunded = models.IntegerField()
     backers = models.IntegerField()
