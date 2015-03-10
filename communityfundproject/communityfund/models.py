@@ -18,6 +18,7 @@ class Users(models.Model):
 class Projects(models.Model):
     projectName = models.CharField(max_length=32, primary_key=True)
     community = models.ForeignKey(Communities, limit_choices_to={'id'})
+    interest = models.ForeignKey(Interests)
     initiator = models.ForeignKey(Users, limit_choices_to={'userName'})
     goal = models.IntegerField()
     amountFunded = models.IntegerField()
@@ -26,7 +27,7 @@ class Projects(models.Model):
     def __unicode__(self):
         return self.projectName + " - " + self.community + ", " + self.province
 
-class Interests(model.Model):
+class Interests(models.Model):
     interest = models.CharField(max_length=32)
     
     def __unicode__(self):
