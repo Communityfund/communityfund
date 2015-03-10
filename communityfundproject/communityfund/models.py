@@ -16,6 +16,12 @@ class Users(models.Model):
     def __unicode__(self):
         return self.userName
 
+class Interests(models.Model):
+    interest = models.CharField(max_length=32)
+    
+    def __unicode__(self):
+        return self.interest
+        
 class Projects(models.Model):
     projectName = models.CharField(max_length=32, primary_key=True)
     community = models.ForeignKey(Communities, limit_choices_to={'id'})
@@ -27,12 +33,6 @@ class Projects(models.Model):
     
     def __unicode__(self):
         return self.projectName + " - " + self.community + ", " + self.province
-
-class Interests(models.Model):
-    interest = models.CharField(max_length=32)
-    
-    def __unicode__(self):
-        return self.interest
         
 #class Payments(models.Model):
 #    backer = models.ForeignKey(Users, limit_choices_to={'userName'})
