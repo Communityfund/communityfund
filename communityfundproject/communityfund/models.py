@@ -1,8 +1,8 @@
 from django.db import models
 
 class Communities(models.Model):
-    community = models.ForeignKey(max_length=32, primary_key=True, related_name='community')
-    province = models.ForeignKey(max_length=32, primary_key=True, related_name='province')
+    community = models.CharField(max_length=32, primary_key=True)
+    province = models.CharField(max_length=32, primary_key=True)
     
     def __unicode__(self):
         return self.name + ", " + self.province
@@ -17,8 +17,7 @@ class Users(models.Model):
 
 class Projects(models.Model):
     projectName = models.CharField(max_length=32, primary_key=True)
-    community = models.ForeignKey(Communities, limit_choices_to={'community'}, primary_key=True)
-    province = models.ForeignKey(Communities, limit_choices_to={'province'}, primary_key=True)
+    community = models.ForeignKey(Communities, limit_choices_to={'id'})
     initiator = models.ForeignKey(Users, limit_choices_to={'userName'})
     goal = models.IntegerField()
     amountFunded = models.IntegerField()
