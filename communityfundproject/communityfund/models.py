@@ -1,8 +1,8 @@
 from django.db import models
 
 class Communities(models.Model):
-    community = models.CharField(max_length=32, primary_key=True)
-    province = models.CharField(max_length=32, primary_key=True)
+    community = models.CharField(max_length=32)
+    province = models.CharField(max_length=32)
     
     def __unicode__(self):
         return self.name + ", " + self.province
