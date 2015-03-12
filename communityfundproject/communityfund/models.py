@@ -33,7 +33,13 @@ class CommunityProjects(models.Model):
     
     def __unicode__(self):
         return self.projectName
-        
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User)
+    community = models.ForeignKey(Communities)
+    
+    def __unicode__(self):
+        return self.user.username
 #class Payments(models.Model):
 #    backer = models.ForeignKey(Users, limit_choices_to={'userName'})
 #    projectID = models.ForeignKey(Projects)
