@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Communities(models.Model):
     community = models.CharField(max_length=32)
