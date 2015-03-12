@@ -6,7 +6,8 @@ class Communities(models.Model):
     
     def __unicode__(self):
         return self.community + ", " + self.province
-        
+  
+# IGNORE - Need to delete     
 class Usernames(models.Model):
     userName = models.CharField(max_length=32, unique=True, primary_key=True)
     emailAddress = models.EmailField()

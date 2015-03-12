@@ -8,4 +8,7 @@ def index(request):
 def about(request):
     return HttpResponse("This is the about page for CommunityFund")
 
+def login(request):
+    return render(request, 'communityfund/login.html')
+    
 # Create your views here.
