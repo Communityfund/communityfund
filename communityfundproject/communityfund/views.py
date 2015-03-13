@@ -34,6 +34,7 @@ def signup(request):
             profile.save()
             registered = True
         else:
+            registered = True
             print user_form.errors, profile_form.errors
     else:
         user_form = UserForm()
