@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CommunityFund - About Us</title>
+
+  <!-- Aditions -->
+  <meta name="generator" content="Webflow">
+  <link rel="stylesheet" type="text/css" href="{% static "communityfund/css/normalize.css" %}">
+  <link rel="stylesheet" type="text/css" href="{% static "communityfund/css/webflow.css" %}">
+  <link rel="stylesheet" type="text/css" href="{% static "communityfund/css/render.css" %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script>
+  WebFont.load({
+    google: {
+      families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic"]
+    }
+  });
+  </script>
+  <script type="text/javascript" src="{% static "communityfund/js/modernizr.js" %}"></script>
+
+</head>
+<body>
+  <div class="w-section nav-bar">
+    <div class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-6">
+          <h1>CommunityFund</h1>
+        </div>
+        <div class="w-col w-col-2 nav-column"><a class="nav-link" href="#">Communities</a>
+        </div>
+        <div class="w-col w-col-2 nav-column"><a class="nav-link" href="#">Log in&nbsp;</a>
+        </div>
+        <div class="w-col w-col-2 nav-column"><a class="nav-link" href="#">Sign up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-section default">
+    <div class="w-container">
+      <h1>Projects</h1>
+      <h1 class="subheading">Check out some of the top projects on the platform.</h1>
+    </div>
+    <div class="w-container">
+      <div class="w-row project">
+        <div class="w-col w-col-4 project-image-container"><img class="project-image" src="{% static "communityfund/images/rocket.jpg" %}" width="330" height="200" alt="550335c4a54fb8ee101731db_rocket.jpg">
+        </div>
+        <div class="w-col w-col-8 project-description">
+          <h2 class="project-title">RocketX&nbsp;Space Mission</h2>
+          <h4 class="project-author">by Sergey Britol</h4>
+          <div class="project-text">We’re working on increasing the fuel supplies on the RocketX Mars Mission.&nbsp;RocketX is the leading starup working on making space flight to Mars possible.is some text inside of a div block.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-section footer">
+    <div class="w-container">
+      <div class="w-row footer">
+        <div class="w-col w-col-4">
+          <h1>Content</h1>
+          <div class="footer-text">This website is still under development. You can keep checking back every once in a while to see what content comes out.</div>
+        </div>
+        <div class="w-col w-col-4">
+          <h1>Links</h1><a class="footer-text" href="#">About Us</a>
+        </div>
+        <div class="w-col w-col-4">
+          <h1>Newsletter</h1>
+          <div class="footer-text">In the future, we’re going to create a newsletter for all our visitors.&nbsp;</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-section default">
+    <div class="w-container">
+      <div class="copyright-text">© 2015 | CommunityFund</div>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/webflow.js"></script>
+  <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+
+    </body>
+    </html>
