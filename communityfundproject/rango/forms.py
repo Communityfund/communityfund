@@ -39,7 +39,6 @@ class UserForm(forms.ModelForm):
         fields = ('username', 'email', 'password')
 
 class UserProfileForm(forms.ModelForm):
-    communities = forms.ModelChoiceField(queryset=Communities.objects.all())
     class Meta:
         model = RangoUserProfile
         fields = {'website', 'picture'}
