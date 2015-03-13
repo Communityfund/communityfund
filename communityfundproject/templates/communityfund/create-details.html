@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
 <!-- Last Published: Fri Mar 13 2015 22:27:45 GMT+0000 (UTC) -->
-<html data-wf-site="5503114b5885f7ec108c961f" data-wf-page="550324967a851c880c695b6a">
+<html data-wf-site="5503114b5885f7ec108c961f" data-wf-page="55034fc05f1c768a0cb5c5f7">
 <head>
   <meta charset="utf-8">
-  <title>Projects - temporaryweb</title>
+  <title>Create Details - temporaryweb</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="Webflow">
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
@@ -38,41 +38,43 @@
       </div>
     </div>
   </div>
-  <div class="w-section default">
-    <div class="w-container">
-      <h1>Projects</h1>
-      <h1 class="subheading">Check out some of the top projects on the platform.</h1>
-    </div>
-    <div class="w-container project-container">
-      <div class="w-row project">
-        <div class="w-col w-col-4 project-image-container"><img class="project-image" src="{% static "communityfund/images/rocket.jpg" %}" width="330" height="200" alt="550335c4a54fb8ee101731db_rocket.jpg">
+  <div class="w-section default project-page">
+    <div class="w-container create-background">
+      <h1>Start building your project!</h1>
+      <h1 class="subheading">Add an image, a goal, and other important details.</h1>
+      <div class="w-form">
+        <form class="rounding" id="email-form" name="email-form" data-name="Email Form">
+          <label class="black-text" for="projects-2">Project Title</label>
+          <input class="w-input rounding" id="title" type="text" name="title" data-name="title">
+          <label class="black-text" for="blurb">Blurb</label>
+          <textarea class="w-input rounding" id="blurb" placeholder="My project is meant to help fund local schools, so that they can continue providing a great education for youth in their communities!" name="blurb" data-name="blurb"></textarea>
+          <label class="black-text" for="projects-2">Interest</label>
+          <select class="w-select create-selection" id="projects-2" name="projects-2" data-name="Projects 2" required="required">
+            <option value="Art">Art</option>
+            <option value="comic">Comic</option>
+            <option value="dance">Dance</option>
+            <option value="design">Design</option>
+            <option value="fashion">Fashion</option>
+            <option value="filmandvideo">Film &amp; Video</option>
+            <option value="food">Food</option>
+            <option value="journalism">Journalism</option>
+            <option value="music">Music</option>
+            <option value="photography">Photography</option>
+            <option value="writing">Writing</option>
+            <option value="technology">Technology</option>
+            <option value="theatre">Theatre</option>
+          </select>
+          <label class="black-text" for="duration">Funding Duration</label>
+          <input class="w-input rounding" id="duration" type="text" placeholder="1-60 days, we recommend 30 or less" name="duration" required="required" data-name="duration">
+          <label class="black-text" for="funding">Funding Goal</label>
+          <input class="w-input rounding" id="funding" type="email" placeholder="$0 CAD" name="funding" data-name="funding" required="required">
+          <input class="w-button create-submit" type="submit" value="Submit" data-wait="Please wait...">
+        </form>
+        <div class="w-form-done">
+          <p>Thank you! Your submission has been received!</p>
         </div>
-        <div class="w-col w-col-8 project-description">
-          <h2 class="project-title">RocketX&nbsp;Space Mission</h2>
-          <h4 class="project-author">by Sergey Britol</h4>
-          <div class="project-text">We’re working on increasing the fuel supplies on the RocketX Mars Mission.&nbsp;RocketX is the leading starup working on making space flight to Mars possible.is some text inside of a div block.</div>
-        </div>
-      </div>
-    </div>
-    <div class="w-container project-container">
-      <div class="w-row project">
-        <div class="w-col w-col-4 project-image-container"><img class="project-image" src="{% static "communityfund/images/shaving.jpg" %}" width="330" height="200" alt="55036396fcf8363401e2be91_shaving.jpg">
-        </div>
-        <div class="w-col w-col-8 project-description">
-          <h2 class="project-title">Shaving Locales</h2>
-          <h4 class="project-author">by Adam Valoris</h4>
-          <div class="project-text">We’re working on making sure that everyone in the community has the funds to shave. Every man needs to be able to shave. It's not just a privilege, it's a right. Help us fund shaving equipment for all of the men in the community.</div>
-        </div>
-      </div>
-    </div>
-    <div class="w-container project-container">
-      <div class="w-row project">
-        <div class="w-col w-col-4 project-image-container"><img class="project-image" src="{% static "communityfund/images/dolls.jpg" %}" width="330" height="200" alt="550363ff5070671206cd66d8_dolls.jpg">
-        </div>
-        <div class="w-col w-col-8 project-description">
-          <h2 class="project-title">Dolls for Kids</h2>
-          <h4 class="project-author">by Billy Bo</h4>
-          <div class="project-text">Everyone gets a doll. Boys. Girls. It doesn’t matter. No matter what their age is...as long as they are children...they are getting a doll. Sign up today to help fund this great local initiative!</div>
+        <div class="w-form-fail">
+          <p>Oops! Something went wrong while submitting the form :(</p>
         </div>
       </div>
     </div>
