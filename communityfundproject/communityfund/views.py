@@ -10,6 +10,15 @@ def index(request):
 def about(request):
     return render(request, 'communityfund/about.html')
 
+def topprojects(request):
+    return render(request, 'communityfund/top-projects.html')
+    
+def create(request):
+    return render(request, 'communityfund/create.html')
+    
+def createdetail(request):
+    return render(request, 'communityfund/create-details.html')
+
 def login(request):
     return render(request, 'communityfund/login.html')
     
