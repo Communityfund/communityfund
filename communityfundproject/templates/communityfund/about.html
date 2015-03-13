@@ -38,60 +38,64 @@
     </head>
     <body>
       <div class="w-section nav-bar">
-    <div class="w-container">
-      <div class="w-row">
-        <div class="w-col w-col-6">
-          <h1>CommunityFund</h1>
-        </div>
-        <div class="w-col w-col-2 nav-column"><a class="nav-link" href="#">Communities</a>
-        </div>
-        <div class="w-col w-col-2 nav-column"><a class="nav-link" href="#">Log in&nbsp;</a>
-        </div>
-        <div class="w-col w-col-2 nav-column"><a class="nav-link" href="#">Sign up</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="w-section default">
-    <div class="w-container">
-      <h1 class="default">Meet the Team</h1>
-      <h1 class="subheading">Our team working behind the scenes at CommunityFund.</h1>
-    </div>
-    <div class="w-container default">
-      <div class="w-row">
-        <div class="w-col w-col-4"><img class="image abrar" src="images/abrar.jpg" width="240" height="240" alt="550313515f1c768a0cb5bcbd_abrar.jpg">
-        </div>
-        <div class="w-col w-col-4"><img class="image mohammad" src="images/mohammad.jpg" width="240" height="240" alt="550313ea5885f7ec108c96f6_mohammad.jpg">
-        </div>
-        <div class="w-col w-col-4"><img class="image john" src="images/john.jpg" width="240" height="240" alt="550313f65f1c768a0cb5bce7_john.jpg">
+        <div class="w-container">
+          <div class="w-row">
+            <div class="w-col w-col-6">
+              <h1>CommunityFund</h1>
+            </div>
+            <div class="w-col w-col-2 nav-column"><a class="nav-link" href="#">Communities</a>
+            </div>
+            <div class="w-col w-col-2 nav-column"><a class="nav-link" href="#">Log in&nbsp;</a>
+            </div>
+            <div class="w-col w-col-2 nav-column"><a class="nav-link" href="#">Sign up</a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="w-section footer">
-    <div class="w-container">
-      <div class="w-row footer">
-        <div class="w-col w-col-4">
-          <h1>Content</h1>
-          <div class="footer-text">This website is still under development. You can keep checking back every once in a while to see what content comes out.</div>
+      <div class="w-section default">
+        <div class="w-container">
+          <h1 class="default">Meet the Team</h1>
+          <h1 class="subheading">Our team working behind the scenes at CommunityFund.</h1>
         </div>
-        <div class="w-col w-col-4">
-          <h1>Links</h1><a class="footer-text" href="#">About Us</a>
-        </div>
-        <div class="w-col w-col-4">
-          <h1>Newsletter</h1>
-          <div class="footer-text">In the future, we’re going to create a newsletter for all our visitors.&nbsp;</div>
+        <div class="w-container default">
+          <div class="w-row">
+            <div class="w-col w-col-4"><img class="image abrar" src="{% static "communityfund/images/abrar.jpg" %}" width="240" height="240" alt="abrar">
+            </div>
+            <div class="w-col w-col-4"><img class="image mohammad" src="{% static "communityfund/images/mohammad.jpg" %}" width="240" height="240" alt="mohammad">
+            </div>
+            <div class="w-col w-col-4"><img class="image john" src="{% static "communityfund/images/john.jpg" %}" width="240" height="240" alt="john">
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="w-section default">
-    <div class="w-container">
-      <div class="copyright-text">© 2015 | KickstarterSpace</div>
-    </div>
-  </div>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/webflow.js"></script>
-  <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
-      </body>
-      </html>
+
+      <div class="w-section footer">
+        <div class="w-container">
+          <div class="w-row footer">
+            <div class="w-col w-col-4">
+              <h1>Content</h1>
+              <div class="footer-text">This website is still under development. You can keep checking back every once in a while to see what content comes out.</div>
+            </div>
+            <div class="w-col w-col-4">
+              <h1>Links</h1><a class="footer-text" href="#">About Us</a>
+            </div>
+            <div class="w-col w-col-4">
+              <h1>Newsletter</h1>
+              <div class="footer-text">In the future, we’re going to create a newsletter for all our visitors.&nbsp;</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-section default">
+        <div class="w-container">
+          <div class="copyright-text">© 2015 | KickstarterSpace</div>
+        </div>
+      </div>
+
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+      <script src="{% static "communityfund/js/webflow.js" %}"></script>
+    </body>
+    </html>
