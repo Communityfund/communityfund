@@ -94,41 +94,7 @@ p {
   line-height: 14px;
 }
 .footer-text {
-  margin-bottom: 5px;
   font-family:'Open Sans', sans-serif;
   color: #989898;
   text-decoration: none;
-}
-.newsletter-form {
-  width: auto;
-  height: 40px;
-  max-width: 250px;
-  float: left;
-  background-color: #f0f0f0;
-  font-family:'Open Sans', sans-serif;
-  text-align: center;
-}
-.newsletter-submit {
-  height: 40px;
-  min-width: 75px;
-  padding-top: 8px;
-  border: 2px solid #b33e3e;
-  background-color: white;
-  font-family:'Open Sans', sans-serif;
-  color: black;
-  font-weight: 600;
-  list-style-type: none;
-}
-.copyright-text {
-  margin-top: 12px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  font-family:'Open Sans', sans-serif;
-  font-size: 14px;
-}
-@media (max-width: 991px) {
-}
-@media (max-width: 767px) {
-}
-@media (max-width: 479px) {
 }
