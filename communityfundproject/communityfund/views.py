@@ -11,4 +11,7 @@ def about(request):
 def login(request):
     return render(request, 'communityfund/login.html')
     
+def signup(request):
+    return render(request, 'communityfund/signup.html')
+    
 # Create your views here.
