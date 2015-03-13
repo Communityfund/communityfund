@@ -10,6 +10,7 @@ class UserForm(forms.ModelForm):
         fields = ('username', 'email', 'password')
 
 class UserProfileForm(forms.ModelForm):
+    username = forms.CharField(max_length=32)
     firstName = forms.CharField(max_length=32)
     lastName = forms.CharField(max_length=32)
     communities = forms.ModelChoiceField(queryset=Communities.objects.all())
