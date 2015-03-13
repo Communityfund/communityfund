@@ -11,7 +11,7 @@ def about(request):
     return render(request, 'communityfund/about.html')
 
 def intro(request):
-    return render(reques, 'communityfund/intro.html')
+    return render(request, 'communityfund/intro.html')
 
 def topprojects(request):
     return render(request, 'communityfund/top-projects.html')
