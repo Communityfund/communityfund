@@ -167,3 +167,29 @@ body {
     width: 700px;
   }
 }
+
+
+/* Add in content for about page. */
+ .team-member {
+    display: block;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-left: auto;
+  }
+
+.team-member-image.abrar {
+  background-image: url('../images/abrar.jpg');
+  background-position: 58% -15px;
+  background-size: 360px;
+}
+
+.team-member-image.john {
+  background-image: url('../images/john.jpg');
+  background-position: 46% -189px;
+  background-attachment: scroll;
+}
+
+.team-member-image.mohammad {
+  background-image: url('../images/mohammad.jpg');
+  background-size: 250px;
+}
