@@ -93,8 +93,15 @@ p {
 .section {
   line-height: 14px;
 }
+.footer {
+  margin-bottom: 10px;
+}
 .footer-text {
   font-family:'Open Sans', sans-serif;
   color: #989898;
   text-decoration: none;
+}
+.copyright-text {
+  padding-top: 10px;
+  font-family:'Open Sans', sans-serif;
 }
