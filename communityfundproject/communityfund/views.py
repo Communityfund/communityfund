@@ -16,6 +16,8 @@ def intro(request):
 def topprojects(request):
     return render(request, 'communityfund/top-projects.html')
     
+def projects(request):
+    return render(request, 'communityfund/projects.html')
 def create(request):
     return render(request, 'communityfund/create.html')
     
