@@ -19,9 +19,7 @@ def signup(request):
         # Grab info from both of the forms on the page
         user_form = UserForm(data=request.POST)
         profile_form = UserProfileForm(data=request.POST)
-        
-        registered = profile_form.is_valid()
-        
+                
         if user_form.is_valid() and profile_form.is_valid():
             # Save the user form data to the DB
             user = user_form.save()

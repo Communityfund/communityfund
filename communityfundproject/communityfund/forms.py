@@ -12,7 +12,7 @@ class UserForm(forms.ModelForm):
 class UserProfileForm(forms.ModelForm):
     firstName = forms.CharField(max_length=32)
     lastName = forms.CharField(max_length=32)
-    communities = forms.ModelChoiceField(queryset=Communities.objects.all())
+    community = forms.ModelChoiceField(queryset=Communities.objects.all())
     
     class Meta:
         model = UserProfile
