@@ -27,6 +27,7 @@
 
         <div class="panel panel-default">
           <div class="panel-body">
+			{% if not registered %}
             <div class="page-header"style="margin-top:5px;">
               <h2>Sign up!</h2>
             </div>
@@ -68,6 +69,11 @@
                   </div>
                 </div>
               </form>
+			  {% else %}
+              <div class="page-header"style="margin-top:5px;">
+                <h2>Thank you!</h2>
+              </div>
+			  {% endif %}
           </div>
         </div>
       </div>
