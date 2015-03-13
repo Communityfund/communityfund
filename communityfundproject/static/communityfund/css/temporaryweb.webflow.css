@@ -225,6 +225,11 @@ p {
 .project-container {
   margin-bottom: 30px;
 }
+.about-subheading {
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+}
 @media (max-width: 991px) {
 }
 @media (max-width: 767px) {
