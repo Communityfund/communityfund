@@ -7,7 +7,23 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CommunityFund - About Us.</title>
+  <title>CommunityFund - About Us</title>
+
+  <!-- Aditions -->
+  <meta name="generator" content="Webflow">
+  <link rel="stylesheet" type="{% static "communityfund/css/normalize.css" %}">
+  <link rel="stylesheet" type="{% static "communityfund/css/webflow.css" %}">
+  <link rel="stylesheet" type="text/css" href="{% static "communityfund/css/render.css" %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic"]
+      }
+    });
+  </script>
+  <script type="text/javascript" src="{% static "communityfund/js/modernizer.js" %}"></script>
+
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -44,7 +60,24 @@
               <h1 class="cover-heading">Meet the Team</h1>
               <p class="lead">Our team working behind the scenes at CommunityFund.  </p>
               <div>
-                <div class="col-sm-4"><img style="max-height:220px" src="communityfund/images/abrar.jpg" /></div> 
+                <div class="team-member">
+          <div class="team-member-image mohammad">
+            <div class="overlay red">
+              <h3>Mohammad Durrani</h3>
+              <div class="team-member-role">project manager</div>
+              <p class="small-paragraph">Mohammad’s information goes here.</p>
+            </div>
+          </div>
+          <div class="margin-bottom-black red">
+            <a class="w-inline-block" href="#"><img class="social" src="images/48x48_facebook.png" alt="53f4a7ecedd3201c1cdfa558_48x48_facebook.png">
+            </a>
+            <a class="w-inline-block" href="#"><img class="social" src="images/48x48_pinterest.png" alt="53f4aa5dedd3201c1cdfa5ab_48x48_pinterest.png">
+            </a>
+            <a class="w-inline-block" href="#"><img class="social" src="images/48x48_dribbble.png" alt="53f4a7b453d19f1d1c691859_48x48_dribbble.png">
+            </a>
+          </div>
+        </div>
+      </div>
                 <div class="col-sm-4"><img style="max-height:220px" src="communityfund/images/mohammad.jpg" /></div> 
                 <div class="col-sm-4"><img style="max-height:220px" src="communityfund/images/john.jpg" /></div> 
               </div>
