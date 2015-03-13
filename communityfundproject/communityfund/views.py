@@ -14,6 +14,6 @@ def login(request):
     
 def signup(request):
     context_dict = {'communities': Communities.objects.all()}
-    return render(request, 'communityfund/signup.html')
+    return render(request, 'communityfund/signup.html', context_dict)
     
 # Create your views here.
