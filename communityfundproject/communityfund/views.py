@@ -40,6 +40,6 @@ def signup(request):
         profile_form = UserProfileForm()
     
     context_dict = {'communities': Communities.objects.all()}
-    return render(request, 'communityfund/signup.html', {'user_form': user_form, 'profile_form': profile_form}, 'registered': registered)
+    return render(request, 'communityfund/signup.html', {'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
     
 # Create your views here.
