@@ -74,6 +74,11 @@ p {
 .default.project-page {
   padding-top: 30px;
 }
+.default.subheading-about {
+  margin-top: 0px;
+  padding-bottom: 20px;
+  font-size: 18px;
+}
 .subheading {
   margin-top: 10px;
   margin-bottom: 10px;
