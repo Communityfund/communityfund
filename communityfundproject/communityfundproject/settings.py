@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'communityfund',
     'rango',
+    'widget_tweaks',
 )
 
 MIDDLEWARE_CLASSES = (
