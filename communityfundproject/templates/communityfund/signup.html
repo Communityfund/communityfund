@@ -45,8 +45,10 @@
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Community</label>
                   <div class="col-sm-10">
-                    <select class="form-control">
-                      <option>Toronto, ON, Canada</option>
+                    <select class="form-control" name="com_select">
+					{% for community in communities %}
+                      <option value="{{ community.id }}">{{ community.community }}</option>
+					{% endfor %}
                     </select>
                   </div>
                 </div>
