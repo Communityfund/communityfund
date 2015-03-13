@@ -1,0 +1,95 @@
+body {
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  color: #333;
+  font-size: 14px;
+  line-height: 20px;
+}
+h1 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 39px;
+  line-height: 44px;
+  font-weight: 700;
+}
+h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 700;
+}
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+}
+h4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+}
+h5 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+}
+h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+}
+p {
+  margin-bottom: 5px;
+}
+.button {
+  display: inline-block;
+  padding: 4px 15px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+.default {
+  padding-bottom: 25px;
+  background-color: #333;
+  font-family:'Open Sans', sans-serif;
+  color: white;
+  line-height: 13px;
+  font-weight: 300;
+  text-align: center;
+}
+.subheading {
+  font-family:'Open Sans', sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+}
+.image {
+  text-align: center;
+}
+.image.abrar {
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.58);
+}
+.image.mohammad {
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.58);
+}
+.image.john {
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.58);
+}
+.section {
+  line-height: 14px;
+}
