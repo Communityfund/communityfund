@@ -10,6 +10,7 @@ h1 {
   margin-top: 20px;
   margin-bottom: 0px;
   font-family:'Open Sans', sans-serif;
+  color: #333;
   font-size: 24px;
   line-height: 34px;
   font-weight: 700;
@@ -69,6 +70,9 @@ p {
   line-height: 13px;
   font-weight: 300;
   text-align: center;
+}
+.default.project-page {
+  padding-top: 30px;
 }
 .subheading {
   margin-top: 10px;
@@ -169,4 +173,45 @@ p {
 }
 .project-image-container {
   background-color: #333;
+}
+.create-background {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 0px;
+  background-color: white;
+}
+.create-form {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  float: none;
+  font-family:'Open Sans', sans-serif;
+  color: black;
+  font-size: 16px;
+}
+.create-selection {
+  position: static;
+  display: inline-block;
+  overflow-x: visible;
+  overflow-y: visible;
+  width: 300px;
+  padding-left: 0px;
+  float: none;
+  clear: none;
+  border-radius: 15px;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+}
+.create-submit {
+  display: block;
+  margin-top: 10px;
+  margin-left: 435px;
+  float: none;
+  border-radius: 15px;
+}
+@media (max-width: 991px) {
+}
+@media (max-width: 767px) {
+}
+@media (max-width: 479px) {
 }
