@@ -7,7 +7,7 @@ def index(request):
     return render(request, 'communityfund/index.html', context_dict)
 
 def about(request):
-    return render(request, 'communityfund/about.html', context_dict)
+    return render(request, 'communityfund/about.html')
 
 def login(request):
     return render(request, 'communityfund/login.html')
