@@ -15,11 +15,12 @@ def login(request):
     
 def signup(request):
     registered = False
-    
     if request.method == 'POST':
         # Grab info from both of the forms on the page
         user_form = UserForm(data=request.POST)
         profile_form = UserProfileForm(data=request.POST)
+        
+        registered = user_form.is_valid()
         
         if user_form.is_valid() and profile_form.is_valid():
             # Save the user form data to the DB
@@ -34,7 +35,6 @@ def signup(request):
             profile.save()
             registered = True
         else:
-            registered = True
             print user_form.errors, profile_form.errors
     else:
         user_form = UserForm()
