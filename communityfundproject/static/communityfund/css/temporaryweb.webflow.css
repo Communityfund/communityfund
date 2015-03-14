@@ -74,12 +74,20 @@ p {
 .default.project-page {
   padding-top: 30px;
 }
+.default.subheading-about {
+  margin-top: 0px;
+  padding-bottom: 20px;
+  font-size: 18px;
+}
 .subheading {
   margin-top: 10px;
   margin-bottom: 10px;
   font-family:'Open Sans', sans-serif;
   font-size: 16px;
   font-weight: 400;
+}
+.subheading.about-subheading {
+  color: white;
 }
 .image {
   text-align: center;
@@ -124,7 +132,7 @@ p {
 .nav-column {
   padding-top: 28px;
   border-right-style: solid;
-  border-right-color: #333;
+  border-right-width: 2px;
   text-align: center;
 }
 .nav-link {
@@ -177,7 +185,9 @@ p {
 .create-background {
   margin-top: 15px;
   margin-bottom: 15px;
-  border-radius: 0px;
+  padding-right: 40px;
+  padding-left: 40px;
+  border-radius: 15px;
   background-color: white;
 }
 .create-form {
@@ -205,9 +215,25 @@ p {
 .create-submit {
   display: block;
   margin-top: 10px;
-  margin-left: 435px;
+  margin-left: 400px;
   float: none;
   border-radius: 15px;
+}
+.rounding {
+  border-radius: 15px;
+  text-align: left;
+}
+.black-text {
+  color: black;
+  text-align: left;
+}
+.project-container {
+  margin-bottom: 30px;
+}
+.about-subheading {
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
 }
 @media (max-width: 991px) {
 }
