@@ -25,7 +25,26 @@ def createdetail(request):
     return render(request, 'communityfund/create-details.html')
 
 def login(request):
-    return render(request, 'communityfund/login.html')
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        
+        # Use django's authentication system to verify that the credentials are correct
+        user = authenticate(username=username, password=password)
+        
+        # Check that the user exists
+        if user:
+            if user.is_active:
+                login(request, user)
+                return HttpResponseRedirect('/communityfund/home')
+            else:
+                return HttpResponse("Your CommunityFund account is disabled.")
+        else:
+            print "Invalid login details: {0}, {1}".format(username, password)
+            return HttpResponse("Invalid login details supplied.")
+    
+    else:
+        return render(request, 'communityfund/login.html', {})
     
 def signup(request):
     registered = False
@@ -54,5 +73,11 @@ def signup(request):
     
     context_dict = {'communities': Communities.objects.all()}
     return render(request, 'communityfund/signup.html', {'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
-    
+
+def home(request):
+    if request.user.is_authenticated():
+        return render(request, 'communityfund/homel.html')
+    else:
+        # Temporary work around until we add in user-restricted pages in the next phase
+        return render(request, 'communityfund/homenl.html')
 # Create your views here.
