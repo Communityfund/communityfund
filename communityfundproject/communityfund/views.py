@@ -115,7 +115,7 @@ def createdetails(request):
                 project.backers = 0
                 project.amountFunded = 0
                 project.initiator = request.user
-                project.community = UserProfile.objects.all().filter(username=request.user.username)[0].community
+                project.community = UserProfile.objects.all().filter(user=request.user)[0].community
                 project.save()
                 success = True
             else:
