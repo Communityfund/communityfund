@@ -172,13 +172,13 @@
 			{% for project in projects %}
 			<div class="col-xs-6 col-sm-10 col-md-5 cfproj" style="border: 1px solid black"> 
 
-				<h2>{project.projectName}</h2>
-				<h3>{project.initiator}</h3>
+				<h2>{{project.projectName }}</h2>
+				<h3>{{ project.initiator }}</h3>
 				<img src="" alt="project-img">
-				<p>{project.description}</p>
-				<p>{project.duration} Days</p>
-				<p>${project.goal}</p>
-				<p>${project.amountFunded} funded</p>
+				<p>{{ project.description }}</p>
+				<p>{{ project.duration }} Days</p>
+				<p>${{ project.goal }}</p>
+				<p>${{ project.amountFunded }} funded</p>
 
 			</div>
 			<br />
