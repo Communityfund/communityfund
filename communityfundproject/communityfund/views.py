@@ -86,7 +86,7 @@ def home(request):
     else:
         # Temporary work around until we add in user-restricted pages in the next phase
         context_dict = {'projects': CommunityProject.objects.all()}
-        return render(request, 'communityfund/homeNL.html')
+        return render(request, 'communityfund/homeNL.html', context_dict)
 
 def createproject(request):
     # Load either the logged in or out version of the page
