@@ -49,14 +49,12 @@
           <label class="black-text" for="projects-2">Project Title</label>
 		  {{ project_form.projectName|add_class:"w-input rounding"|attr:"placeholder:Project name"}}
           <label class="black-text" for="blurb">Blurb</label>
-          <textarea class="w-input rounding" id="blurb" placeholder="My project is meant to help fund local schools, so that they can continue providing a great education for youth in their communities!" name="blurb" data-name="blurb"></textarea>
 		  {{ project_form.description|add_class:"w-input rounding"|attr:"placeholder:My project is meant to help fund local schools, so that they can continue providing a great education for youth in their communities!"}}
           <label class="black-text" for="projects-2">Interest</label>
-		  {{ project_form.interests|add_class:"w-select create-selection"}}
+		  {{ project_form.interest|add_class:"w-select create-selection"}}
           <label class="black-text" for="duration">Funding Duration</label>
 		  {{ project_form.duration|add_class:"w-input rounding"|attr:"placeholder:1-60 days, we recommend 30 or less"}}
           <label class="black-text" for="funding">Funding Goal</label>
-          <input class="w-input rounding" id="funding" type="email" placeholder="$0 CAD" name="funding" data-name="funding" required="required">
 		  {{ project_form.goal|add_class:"w-input rounding"|attr:"placeholder:0"}}
           <input class="w-button create-submit" type="submit" value="Submit" data-wait="Please wait..." />
         </form>
