@@ -32,6 +32,7 @@ class CommunityProject(models.Model):
     amountFunded = models.IntegerField()
     backers = models.IntegerField()
     description = models.CharField(max_length=1000)
+    duration = models.IntegerField()
     
     def __unicode__(self):
         return self.projectName

@@ -19,6 +19,7 @@ def topprojects(request):
     
 def projects(request):
     return render(request, 'communityfund/projects.html')
+    
 def create(request):
     return render(request, 'communityfund/create.html')
     
@@ -76,6 +77,7 @@ def signup(request):
     return render(request, 'communityfund/signup.html', {'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
 
 def home(request):
+    # Load either the logged in or out version of the page
     if request.user.is_authenticated():
         return render(request, 'communityfund/homeL.html')
     else:
@@ -83,12 +85,15 @@ def home(request):
         return render(request, 'communityfund/homeNL.html')
 
 def createproject(request):
+    # Load either the logged in or out version of the page
     if request.user.is_authenticated():
-        return render(request, 'communityfund/create.html')
+        context_dict = {'interests': Interests.objects.all()}
+        return render(request, 'communityfund/create.html', context_dict)
     else:
         return HttpResponse("Restricted Page. Please login to access.")
         
 def intro(request):
+    # Load either the logged in or out version of the page
     if request.user.is_authenticated():
         return render(request, 'communityfund/introL.html')
     else:
@@ -97,4 +102,11 @@ def intro(request):
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect('/communityfund/')
+
+def createdetails(request):
+    if request.user.is_authenticated():
+        context_dict = {'interests': Interests.objects.all()}
+        return render(request, 'communityfund/create-details.html', context_dict)
+    else:
+        return HttpResponse("Restricted Page. Please login to access.")
 # Create your views here.
