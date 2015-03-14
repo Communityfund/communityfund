@@ -3,7 +3,7 @@ from communityfund import views
 
 urlpatterns = patterns('',
         url(r'^$', views.index, name='index'),
-        url(r'^login/$', views.login, name='login'),
+        url(r'^login/$', views.user_login, name='login'),
         url(r'^projects/$', views.projects, name='projects'),
         url(r'^topprojects/$', views.topprojects, name='topprojects'),
         url(r'^create/$', views.create, name='create'),
