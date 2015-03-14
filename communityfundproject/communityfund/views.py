@@ -80,4 +80,10 @@ def home(request):
     else:
         # Temporary work around until we add in user-restricted pages in the next phase
         return render(request, 'communityfund/homeNL.html')
+
+def createproject(request):
+    if request.user.is_authenticated():
+        return render(request, 'communityfund/create.html')
+    else:
+        return HttpResponse("Restricted Page. Please login to access.")
 # Create your views here.
