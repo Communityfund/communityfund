@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from communityfund.models import Communities
+from communityfund.models import Communities, Interests
 from communityfund.forms import UserForm, UserProfileForm
 from django.contrib.auth import authenticate, login, logout
 
