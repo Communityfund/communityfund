@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from communityfund.models import Communities, Interests, UserProfile
+from communityfund.models import Communities, Interests, UserProfile, CommunityProject
 from django.contrib.auth.models import User
 from communityfund.forms import UserForm, UserProfileForm, ProjectForm
 from django.contrib.auth import authenticate, login, logout
@@ -80,7 +80,8 @@ def signup(request):
 def home(request):
     # Load either the logged in or out version of the page
     if request.user.is_authenticated():
-        return render(request, 'communityfund/homeL.html')
+        context_dict = {'projects': CommunityProject.objects.all().filter(community=user.community)}
+        return render(request, 'communityfund/homeL.html', context_dict)
     else:
         # Temporary work around until we add in user-restricted pages in the next phase
         return render(request, 'communityfund/homeNL.html')
