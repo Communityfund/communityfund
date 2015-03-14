@@ -94,7 +94,7 @@ def intro(request):
     else:
         return render(request, 'communityfund/introNL.html')
 
-def logout(request):
-    auth.logout(request)
+def user_logout(request):
+    logout(request)
     return HttpResponseRedirect('/communityfund/')
 # Create your views here.
