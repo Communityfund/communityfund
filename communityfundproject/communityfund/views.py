@@ -87,4 +87,11 @@ def createproject(request):
         return render(request, 'communityfund/create.html')
     else:
         return HttpResponse("Restricted Page. Please login to access.")
+        
+def intro(request):
+    if request.user.is_authenticated():
+        return render(request, 'communityfund/indexL.html')
+    else:
+        return render(request, 'communityfund/indexNL.html')
+        
 # Create your views here.
