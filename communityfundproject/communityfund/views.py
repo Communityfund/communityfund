@@ -80,7 +80,7 @@ def signup(request):
 def home(request):
     # Load either the logged in or out version of the page
     if request.user.is_authenticated():
-        context_dict = {'projects': CommunityProject.objects.all().filter(community=user.community)}
+        context_dict = {'projects': CommunityProject.objects.all().filter(community=request.user.community)}
         return render(request, 'communityfund/homeL.html', context_dict)
     else:
         # Temporary work around until we add in user-restricted pages in the next phase
