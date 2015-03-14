@@ -76,8 +76,8 @@ def signup(request):
 
 def home(request):
     if request.user.is_authenticated():
-        return render(request, 'communityfund/homel.html')
+        return render(request, 'communityfund/homeL.html')
     else:
         # Temporary work around until we add in user-restricted pages in the next phase
-        return render(request, 'communityfund/homenl.html')
+        return render(request, 'communityfund/homeNL.html')
 # Create your views here.
