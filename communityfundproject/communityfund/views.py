@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from communityfund.models import Communities, Interests
-from communityfund.forms import UserForm, UserProfileForm
+from communityfund.models import Communities, Interests, UserProfile
+from django.contrib.auth.models import User
+from communityfund.forms import UserForm, UserProfileForm, ProjectForm
 from django.contrib.auth import authenticate, login, logout
 
 def index(request):
@@ -105,7 +106,26 @@ def user_logout(request):
 
 def createdetails(request):
     if request.user.is_authenticated():
+        success = False
+        if request.method == 'POST':
+            project_form = ProjectForm(data=request.POST)
+            
+            if project_form.is_valid():
+                project = project_form.save(commit=False)
+                project.backers = 0
+                project.amountFunded = 0
+                project.initiator = request.user
+                project.community = UserProfile.objects.all().filter(username=request.user.username)[0].community
+                project.save()
+                success = True
+            else:
+                project_form.errors
+        else:
+            project_form = ProjectForm()
+            
         context_dict = {'interests': Interests.objects.all()}
+        context_dict['project_form'] = project_form
+        context_dict['success'] = success
         return render(request, 'communityfund/create-details.html', context_dict)
     else:
         return HttpResponse("Restricted Page. Please login to access.")

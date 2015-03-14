@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load staticfiles %}
+{% load widget_tweaks %}
 <!-- This site was created in Webflow. http://www.webflow.com-->
 <!-- Last Published: Fri Mar 13 2015 22:27:45 GMT+0000 (UTC) -->
 <html data-wf-site="5503114b5885f7ec108c961f" data-wf-page="55034fc05f1c768a0cb5c5f7">
@@ -44,32 +45,20 @@
       <h1>Start building your project!</h1>
       <h1 class="subheading">Add an image, a goal, and other important details.</h1>
       <div class="w-form">
-        <form class="rounding" id="email-form" name="email-form" data-name="Email Form">
+        <form class="rounding" id="project_form" name="email-form" data-name="Email Form">
           <label class="black-text" for="projects-2">Project Title</label>
-          <input class="w-input rounding" id="title" type="text" name="title" data-name="title">
+		  {{ project_form.projectName|add_class:"w-input rounding"|attr:"placeholder:Project name"}}
           <label class="black-text" for="blurb">Blurb</label>
           <textarea class="w-input rounding" id="blurb" placeholder="My project is meant to help fund local schools, so that they can continue providing a great education for youth in their communities!" name="blurb" data-name="blurb"></textarea>
+		  {{ project_form.description|add_class:"w-input rounding"|attr:"placeholder:My project is meant to help fund local schools, so that they can continue providing a great education for youth in their communities!"}}
           <label class="black-text" for="projects-2">Interest</label>
-          <select class="w-select create-selection" id="projects-2" name="projects-2" data-name="Projects 2" required="required">
-            <option value="Art">Art</option>
-            <option value="comic">Comic</option>
-            <option value="dance">Dance</option>
-            <option value="design">Design</option>
-            <option value="fashion">Fashion</option>
-            <option value="filmandvideo">Film &amp; Video</option>
-            <option value="food">Food</option>
-            <option value="journalism">Journalism</option>
-            <option value="music">Music</option>
-            <option value="photography">Photography</option>
-            <option value="writing">Writing</option>
-            <option value="technology">Technology</option>
-            <option value="theatre">Theatre</option>
-          </select>
+		  {{ project_form.interests|add_class:"w-select create-selection"}}
           <label class="black-text" for="duration">Funding Duration</label>
-          <input class="w-input rounding" id="duration" type="text" placeholder="1-60 days, we recommend 30 or less" name="duration" required="required" data-name="duration">
+		  {{ project_form.duration|add_class:"w-input rounding"|attr:"placeholder:1-60 days, we recommend 30 or less"}}
           <label class="black-text" for="funding">Funding Goal</label>
           <input class="w-input rounding" id="funding" type="email" placeholder="$0 CAD" name="funding" data-name="funding" required="required">
-          <input class="w-button create-submit" type="submit" value="Submit" data-wait="Please wait...">
+		  {{ project_form.goal|add_class:"w-input rounding"|attr:"placeholder:0"}}
+          <input class="w-button create-submit" type="submit" value="Submit" data-wait="Please wait..." />
         </form>
         <div class="w-form-done">
           <p>Thank you! Your submission has been received!</p>
