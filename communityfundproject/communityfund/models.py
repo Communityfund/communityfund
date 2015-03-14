@@ -7,8 +7,35 @@ class Communities(models.Model):
     
     def __unicode__(self):
         return self.community + ", " + self.province
-  
-# IGNORE - Need to delete     
+
+class Interests(models.Model):
+    interest = models.CharField(max_length=32)
+    
+    def __unicode__(self):
+        return self.interest
+
+class UserProfile(models.Model):
+    firstName = models.CharField(max_length=32)
+    lastName = models.CharField(max_length=32)
+    user = models.OneToOneField(User)
+    community = models.ForeignKey(Communities)
+    
+    def __unicode__(self):
+        return self.user.username
+
+class CommunityProject(models.Model):
+    projectName = models.CharField(max_length=32)
+    community = models.ForeignKey(Communities)
+    interest = models.ForeignKey(Interests)
+    initiator = models.ForeignKey(User)
+    goal = models.IntegerField()
+    amountFunded = models.IntegerField()
+    backers = models.IntegerField()
+    
+    def __unicode__(self):
+        return self.projectName
+        
+# DEPRECATED - Need to delete     
 class Usernames(models.Model):
     userName = models.CharField(max_length=32, unique=True, primary_key=True)
     emailAddress = models.EmailField()
@@ -17,12 +44,7 @@ class Usernames(models.Model):
     def __unicode__(self):
         return self.userName
 
-class Interests(models.Model):
-    interest = models.CharField(max_length=32)
-    
-    def __unicode__(self):
-        return self.interest
-        
+# DEPRECATED - REMOVE     
 class CommunityProjects(models.Model):
     projectName = models.CharField(max_length=32, primary_key=True)
     community = models.ForeignKey(Communities)
@@ -34,15 +56,6 @@ class CommunityProjects(models.Model):
     
     def __unicode__(self):
         return self.projectName
-
-class UserProfile(models.Model):
-    firstName = models.CharField(max_length=32)
-    lastName = models.CharField(max_length=32)
-    user = models.OneToOneField(User)
-    community = models.ForeignKey(Communities)
-    
-    def __unicode__(self):
-        return self.user.username
         
 #class Payments(models.Model):
 #    backer = models.ForeignKey(Users, limit_choices_to={'userName'})
