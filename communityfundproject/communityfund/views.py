@@ -90,8 +90,8 @@ def createproject(request):
         
 def intro(request):
     if request.user.is_authenticated():
-        return render(request, 'communityfund/indexL.html')
+        return render(request, 'communityfund/intro.html')
     else:
-        return render(request, 'communityfund/indexNL.html')
+        return render(request, 'communityfund/intro.html')
         
 # Create your views here.
