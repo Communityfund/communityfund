@@ -26,6 +26,7 @@
 <div class="container">
 
       <form class="form-signin" method="post" action="/communityfund/login/">
+		  {% csrf_token %}
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="username" class="sr-only">Email address</label>
         <input type="text" id="username" class="form-control" placeholder="Username" required autofocus>
