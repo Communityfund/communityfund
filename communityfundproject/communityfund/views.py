@@ -109,7 +109,7 @@ def createdetails(request):
         success = False
         if request.method == 'POST':
             project_form = ProjectForm(data=request.POST)
-            
+            success = project_form.is_valid()
             if project_form.is_valid():
                 project = project_form.save(commit=False)
                 project.backers = 0

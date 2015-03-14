@@ -45,7 +45,7 @@
       <h1>Start building your project!</h1>
       <h1 class="subheading">Add an image, a goal, and other important details.</h1>
       <div class="w-form">
-        <form class="rounding" id="project_form" name="email-form" data-name="Email Form">
+        <form class="rounding" id="project_form" name="email-form" data-name="Email Form" method="post" action="/communityfund/createdetails/" enctype="multipart/form-data">
           <label class="black-text" for="projects-2">Project Title</label>
 		  {{ project_form.projectName|add_class:"w-input rounding"|attr:"placeholder:Project name"}}
           <label class="black-text" for="blurb">Blurb</label>
