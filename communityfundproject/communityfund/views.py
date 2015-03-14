@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from communityfund.models import Communities
 from communityfund.forms import UserForm, UserProfileForm
+from django.contrib.auth import authenticate, login
 
 def index(request):
     context_dict = {'boldmessage': "We are powered by Django!"}
