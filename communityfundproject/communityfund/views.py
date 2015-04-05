@@ -160,5 +160,5 @@ def profile(request, profile_name):
         
     except (User.DoesNotExist, UserProfile.DoesNotExist) as e:
         pass
-    return render(request, 'communityfund/project.html', context_dict)
+    return render(request, 'communityfund/profile.html', context_dict)
 # Create your views here.
