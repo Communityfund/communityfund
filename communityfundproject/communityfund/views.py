@@ -74,7 +74,7 @@ def home(request):
         # all of their projects, and all other projects.
         
         # Get the user's contributed to projects
-        contributed = Payment.objects.all().filter(user=request.user).values('project')
+        contributed = Payment.objects.all().filter(backer=request.user).values('project')
         
         # Get the user's own projects
         ownprojects = CommunityProject.objects.all().filter(intiator=request.user)
