@@ -50,11 +50,11 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profile<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="profile.html">My Profile</a></li>
-                <li><a href="editprofile.html">Edit Profile</a></li>
-                <li><a href="settings.html">Account Settings</a></li>
+                <li><a href="/communityfund/profile">My Profile</a></li>
+                <li><a href="/communityfund/editprofile">Edit Profile</a></li>
+                <li><a href="/communityfund/settings">Account Settings</a></li>
                 <li class="divider"></li>
-                <li><a href="#">Log out</a></li>
+                <li><a href="/">Log out</a></li>
               </ul>
             </li>
           </ul>
@@ -64,7 +64,7 @@
     
     <div class="container">
 	    <div class="row">
-	    	<h2><a href="projectsstarted.html">Projects Started</a></h2>
+	    	<h2>Projects Started</h2>
 	    </div>
     	<div class="row">
 			{% for project in ownprojects %}
@@ -78,7 +78,7 @@
 	    </div>
 		
 	    <div class="row">
-	    	<h2><a href="projectsfunded.html">Projects I'm Funding</a></h2>
+	    	<h2>Projects I'm Funding</h2>
 	    </div>
 	    <div class="row">
 			{% for project in contributed %}
@@ -104,7 +104,7 @@
 	        </div>
 			{% endfor %}
 
-	        <p><a href="#">See more</a></p>
+	        <p><a href="/communityfund/next">See more</a></p>
 	    </div>
 	</div><!--container-->
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
