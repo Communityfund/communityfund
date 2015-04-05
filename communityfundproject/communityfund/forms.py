@@ -34,4 +34,4 @@ class ProjectForm(forms.ModelForm):
     
     class Meta:
         model = CommunityProject
-        fields = ('projectName', 'interest', 'goal', 'blurb', 'duration', 'dateCreated', 'why', 'who', 'how', 'support', 'more', 'rewards', 'picture')
+        fields = ('projectName', 'interest', 'goal', 'blurb', 'duration', 'why', 'who', 'how', 'support', 'more', 'rewards', 'picture')

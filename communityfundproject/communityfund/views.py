@@ -4,7 +4,7 @@ from communityfund.models import Communities, Interests, UserProfile, CommunityP
 from django.contrib.auth.models import User
 from communityfund.forms import UserForm, UserProfileForm, ProjectForm
 from django.contrib.auth import authenticate, login, logout
-
+from datetime import datetime
 def index(request):
     context_dict = {'boldmessage': "We are powered by Django!"}
     return render(request, 'communityfund/index.html', context_dict)
@@ -96,8 +96,27 @@ def home(request):
 def createproject(request):
     # Only allow logged in users to create a project
     if request.user.is_authenticated():
+        if request.method == 'POST':
+            project_form = ProjectForm(data=request.POST)
+            if project_form.is_valid():
+                project = project_form.save(commit=False)
+                project.backers = 0
+                project.amountFunded = 0
+                project.initiator = request.user
+                project.community = UserProfile.objects.all().filter(user=request.user).values('community')
+                project.dateCreated = datetime.now()
+                project.save()
+                success = True
+            else:
+                project_form.errors
+        else:
+            project_form = ProjectForm()
+        
+        # 'GET' was received, so load the page
         context_dict = {'interests': Interests.objects.all()}
-        return render(request, 'communityfund/create.html', context_dict)
+        context_dict['project_form'] = project_form
+        context_dict['success'] = success
+        return render(request, 'communityfund/createproject.html', context_dict)
     else:
         return HttpResponse("Restricted Page. Please login to access.")
 
@@ -127,6 +146,10 @@ def createdetails(request):
                 project.amountFunded = 0
                 project.initiator = request.user
                 project.community = UserProfile.objects.all().filter(user=request.user)[0].community
+                
+                if 'picture' in request.FILES:
+                    project.picture = request.FILES['picture']
+                    
                 project.save()
                 success = True
             else:

@@ -50,6 +50,10 @@ class CommunityProject(models.Model):
     rewards = models.CharField(max_length=3000)
     picture = models.ImageField(upload_to='projects', blank=True)
     
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.projectName)
+        super(CommunityProject, self).save(*args, **kwargs)
+        
     def __unicode__(self):
         return self.projectName
 
