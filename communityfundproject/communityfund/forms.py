@@ -21,10 +21,17 @@ class UserProfileForm(forms.ModelForm):
 class ProjectForm(forms.ModelForm):
     projectName = forms.CharField(max_length=32)
     goal = forms.IntegerField()
-    description = forms.CharField(max_length=1000, widget=forms.Textarea)
+    blurb = forms.CharField(max_length=140, widget=forms.Textarea)
     duration = forms.IntegerField()
     interest = forms.ModelChoiceField(queryset=Interests.objects.all())
+    dateCreated = forms.DateTimeField()
+    why = forms.CharField(max_length=3000, widget=forms.Textarea)
+    who = forms.CharField(max_length=3000, widget=forms.Textarea)
+    how = forms.CharField(max_length=3000, widget=forms.Textarea)
+    support = forms.CharField(max_length=3000, widget=forms.Textarea)
+    more = forms.CharField(max_length=3000, widget=forms.Textarea)
+    rewards = forms.CharField(max_length=3000, widget=forms.Textarea)
+    
     class Meta:
         model = CommunityProject
-        fields = ('projectName', 'interest', 'goal', 'description', 'duration')
-    
+        fields = ('projectName', 'interest', 'goal', 'blurb', 'duration', 'dateCreated', 'why', 'who', 'how', 'support', 'more', 'rewards', 'picture')

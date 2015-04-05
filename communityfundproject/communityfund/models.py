@@ -38,11 +38,17 @@ class CommunityProject(models.Model):
     goal = models.IntegerField()
     amountFunded = models.IntegerField()
     backers = models.IntegerField()
-    description = models.CharField(max_length=1000)
     duration = models.IntegerField()
     dateCreated = models.DateTimeField()
     blurb = models.CharField(max_length=140)
     slug = models.SlugField()
+    why = models.CharField(max_length=3000)
+    who = models.CharField(max_length=3000)
+    how = models.CharField(max_length=3000)
+    support = models.CharField(max_length=3000)
+    more = models.CharField(max_length=3000)
+    rewards = models.CharField(max_length=3000)
+    picture = models.ImageField(upload_to='projects', blank=True)
     
     def __unicode__(self):
         return self.projectName
