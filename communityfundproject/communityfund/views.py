@@ -96,6 +96,7 @@ def home(request):
 def createproject(request):
     # Only allow logged in users to create a project
     if request.user.is_authenticated():
+        success = False
         if request.method == 'POST':
             project_form = ProjectForm(data=request.POST)
             if project_form.is_valid():
