@@ -1,4 +1,21 @@
-.project-outline {
-	border: 2px solid black;
-	border-radius: 20px;
+.row, .project{
+	padding-top: 10px;	
+	padding-left: 5px;
+
+}	
+
+.project{
+	word-wrap: break-word;
+	height: 600px;
+	width: 365px;
+	float: left;
+	margin-left: 40px;
+	margin-bottom: 40px;
+	background-color: #fff;
+}
+
+body{
+	font-family: Mallanna;
+	background-image: url(struckaxiom.png);
+	background-repeat: repeat;
 }

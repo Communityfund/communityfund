@@ -5,12 +5,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
+    <title>Home - CommunityFund</title>
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-	<link rel="stylesheet" type="text/css" href="{% static "communityfund/css/home.css" %}">
+	<!--Custom styles-->
+	<link rel="stylesheet" href="{% static "communityfund/css/home.css" %}">
+	<!--Font-->
+	<link href='http://fonts.googleapis.com/css?family=Mallanna' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,36 +27,41 @@
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <a class="navbar-brand" href="/">CommunityFund</a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+	      </button>
+          <a class="navbar-brand" href="home.html">CommunityFund</a>
         </div>
-
         <!-- Collect the nav links, forms, and other content for toggling-->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li><a href="/communityfund/find">Find a Project</a></li>
-            <li><a href="/communityfund/createproject">Create a Project</a></li> 
+            <li><a href="/communityfund/createproject"l>Create a Project</a></li> 
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <p>MESSAGES AREA</p>
+                <p>Message Area</p>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span><span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <p>NOTIFICATION AREA</p>
+                <p>Notification Area</p>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profile<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="/communityfund/profile">My Profile</a></li>
+                <li><a href="/communityfund/profilel">My Profile</a></li>
                 <li><a href="/communityfund/editprofile">Edit Profile</a></li>
                 <li><a href="/communityfund/settings">Account Settings</a></li>
                 <li class="divider"></li>
-                <li><a href="/">Log out</a></li>
+                <li><a href="/communityfund/logout">Log out</a></li>
               </ul>
             </li>
           </ul>
@@ -62,31 +69,35 @@
       </div><!-- /.container-fluid -->
     </nav>
     
-    <div class="container">
-	    <div class="row">
-	    	<h2>Projects Started</h2>
-	    </div>
+    <div class="container-fluid">
+
+    	 <div class="row">
+        <h2>Projects Started</h2>
+      </div>
+
     	<div class="row">
-			{% for project in ownprojects %}
-	    	<div class="col-xs-12 col-md-4 project" style="border: 2px solid black;border-radius: 20px;
-	    		padding-left: 5%;">
+    		{% for project in ownprojects %}
+	    	<div class="project" style="border:black 2px solid">
 	          <h4> {{ project.projectName }}</h4>
+	          <a href=""><img src="" height="350" width="350" style="border: black solid 2px;"></a>
 	          <p> By {{ project.initiator }}</p>
 	          <p> Category: {{ project.interest }}</p>
 	          <p> Funding Received: {{ project.amountFunded }}</p>
 	          <p> Funding Target: {{ project.goal }}</p>
 	        </div>
 			{% endfor %}
-	    </div>
-		
+
+	      </div><!--row-->
+
 	    <div class="row">
 	    	<h2>Projects I'm Funding</h2>
 	    </div>
-	    <div class="row">
+
+	     <div class="row">
 			{% for project in contributed %}
-	    	<div class="col-xs-12 col-md-4 project" style="border: 2px solid black;border-radius: 20px;
-	    		padding-left: 5%;">
+	    	<div class="project" style="border:black 2px solid">
 	          <h4> {{ project.projectName }}</h4>
+	          <a href=""><img src="" height="350" width="350" style="border: black solid 2px;"></a>
 	          <p> By {{ project.initiator }}</p>
 	          <p> Category: {{ project.interest }}</p>
 	          <p> Funding Received: {{ project.amountFunded }}</p>
@@ -95,14 +106,16 @@
 			{% endfor %}
 	    </div>
 
+
 	    <div class="row">
-	    	<h2>Based on my interests</h2>
+	    	<h2>Interesting Projects</h2>
 	    </div>
+
 	    <div class="row">
 			{% for project in allprojects %}
-	    	<div class="col-xs-12 col-md-4 project" style="border: 2px solid black;border-radius: 20px;
-	    		padding-left: 5%;">
+	    	<div class="project" style="border:black 2px solid">
 	          <h4> {{ project.projectName }}</h4>
+	          <a href=""><img src="" height="350" width="350" style="border: black solid 2px;"></a>
 	          <p> By {{ project.initiator }}</p>
 	          <p> Category: {{ project.interest }}</p>
 	          <p> Funding Received: {{ project.amountFunded }}</p>
@@ -110,15 +123,18 @@
 	        </div>
 			{% endfor %}
 
-	        <p><a href="/communityfund/next">See more</a></p>
-	    </div>
+		<p><a href="/communityfund/next">See more</a></p>
+	    </div><!--row-->
+
+	  
 	</div><!--container-->
+
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   </body>
-  {% else %}
+   {% else %}
   Test message.
   {% endif %}
 </html>	
