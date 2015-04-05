@@ -38,8 +38,8 @@ class CommunityProject(models.Model):
         return self.projectName
 
 class Payment(models.Model):
-    backer = models.ForeignKey(Users)
-    project = models.ForeignKey(Projects)
+    backer = models.ForeignKey(UserProfile)
+    project = models.ForeignKey(CommunityProject)
     amount = models.IntegerField()
     isDonation = models.BinaryField()
     timestamp = models.DateField()
@@ -57,8 +57,8 @@ class Comment(models.Model):
         return self.commenter + " to " + self.recipient + " at " + self.timestamp
 
 class ProjectComment(models.Model):
-    commenter = models.ForeignKey(Users)
-    project = models.ForeignKey(Projects)
+    commenter = models.ForeignKey(UserProfile)
+    project = models.ForeignKey(CommunityProject)
     text = models.CharField(max_length=1000)
     timestamp = models.DateField()
     
