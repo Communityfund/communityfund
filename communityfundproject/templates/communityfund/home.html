@@ -68,8 +68,9 @@
 	    </div>
     	<div class="row">
 			{% for project in ownprojects %}
-	    	<div class="col-xs-12 col-md-4 project" style="border:black 2px solid">
-	          <h4>Project Title: {{ project.projectName }}</h4>
+	    	<div class="col-xs-12 col-md-4 project project-outline">
+	          <h4> {{ project.projectName }}</h4>
+	          <p> By {{ project.initiator }}</p>
 	          <p> Category: {{ project.interest }}</p>
 	          <p> Funding Received: {{ project.amountFunded }}</p>
 	          <p> Funding Target: {{ project.goal }}</p>
@@ -82,8 +83,9 @@
 	    </div>
 	    <div class="row">
 			{% for project in contributed %}
-	    	<div class="col-xs-12 col-md-4 project" style="border:black 2px solid">
-	          <h4>Project Title: {{ project.projectName }}</h4>
+	    	<div class="col-xs-12 col-md-4 project project-outline">
+	          <h4> {{ project.projectName }}</h4>
+	          <p> By {{ project.initiator }}</p>
 	          <p> Category: {{ project.interest }}</p>
 	          <p> Funding Received: {{ project.amountFunded }}</p>
 	          <p> Funding Target: {{ project.goal }}</p>
@@ -96,8 +98,9 @@
 	    </div>
 	    <div class="row">
 			{% for project in allprojects %}
-	    	<div class="col-xs-12 col-md-4 project" style="border:black 2px solid">
-	          <h4>Project Title: {{ project.projectName }}</h4>
+	    	<div class="col-xs-12 col-md-4 project project-outline">
+	          <h4> {{ project.projectName }}</h4>
+	          <p> By {{ project.initiator }}</p>
 	          <p> Category: {{ project.interest }}</p>
 	          <p> Funding Received: {{ project.amountFunded }}</p>
 	          <p> Funding Target: {{ project.goal }}</p>
