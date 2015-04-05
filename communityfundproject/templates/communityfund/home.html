@@ -70,11 +70,14 @@
     </nav>
     
     <div class="container-fluid">
-    	
+
+    	 <div class="row">
+        <h2>Projects Started</h2>
+      </div>
+
     	<div class="row">
     		{% for project in ownprojects %}
-	    	<div class="col-xs-12 col-md-4 project" style="border: 2px solid black;border-radius: 20px;
-	    		padding-left: 5%;">
+	    	<div class="project" style="border:black 2px solid">
 	          <h4> {{ project.projectName }}</h4>
 	          <a href=""><img src="" height="350" width="350" style="border: black solid 2px;"></a>
 	          <p> By {{ project.initiator }}</p>
@@ -87,13 +90,12 @@
 	      </div><!--row-->
 
 	    <div class="row">
-	    	<h2>Projects Started</h2>
+	    	<h2>Projects I'm Funding</h2>
 	    </div>
 
 	     <div class="row">
 			{% for project in contributed %}
-	    	<div class="col-xs-12 col-md-4 project" style="border: 2px solid black;border-radius: 20px;
-	    		padding-left: 5%;">
+	    	<div class="project" style="border:black 2px solid">
 	          <h4> {{ project.projectName }}</h4>
 	          <a href=""><img src="" height="350" width="350" style="border: black solid 2px;"></a>
 	          <p> By {{ project.initiator }}</p>
@@ -106,13 +108,12 @@
 
 
 	    <div class="row">
-	    	<h2>Projects I'm Funding</h2>
+	    	<h2>Interesting Projects</h2>
 	    </div>
 
 	    <div class="row">
 			{% for project in allprojects %}
-	    	<div class="col-xs-12 col-md-4 project" style="border: 2px solid black;border-radius: 20px;
-	    		padding-left: 5%;">
+	    	<div class="project" style="border:black 2px solid">
 	          <h4> {{ project.projectName }}</h4>
 	          <a href=""><img src="" height="350" width="350" style="border: black solid 2px;"></a>
 	          <p> By {{ project.initiator }}</p>
