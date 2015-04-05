@@ -6,7 +6,7 @@
 
 .project{
 	word-wrap: break-word;
-	height: 600px;
+	height: 500px;
 	width: 365px;
 	float: left;
 	margin-left: 40px;
@@ -18,4 +18,8 @@ body{
 	font-family: Mallanna;
 	background-image: url(../img/struckaxiom.png);
 	background-repeat: repeat;
+}
+
+.project h4 {
+	font-weight: bold;
 }
