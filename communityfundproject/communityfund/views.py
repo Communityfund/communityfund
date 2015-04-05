@@ -150,7 +150,7 @@ def profile(request, profile_name):
         user_profile = UserProfile.objects.all().filter(user=user_info)[0]
         user_projects = CommunityProject.objects.all().filter(initiator=user_info)
         backed_projects = Payment.objects.all().filter(backer=user_info).values('project')
-        interests = Interests.objects.all().filter(user=user_info)
+        interests = UserInterest.objects.all().filter(user=user_info)
         
         context_dict['user_info'] = user_info
         context_dict['user_profile'] = user_profile

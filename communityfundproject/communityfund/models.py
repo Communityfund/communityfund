@@ -39,6 +39,7 @@ class CommunityProject(models.Model):
     backers = models.IntegerField()
     description = models.CharField(max_length=1000)
     duration = models.IntegerField()
+    dateCreated = models.DateTimeField()
     
     def __unicode__(self):
         return self.projectName
@@ -57,7 +58,7 @@ class Comment(models.Model):
     commenter = models.ForeignKey(User, related_name='commenter')
     recipient = models.ForeignKey(User, related_name='recipient')  
     text = models.CharField(max_length=1000)
-    timestamp = models.DateField()
+    timestamp = models.DateTimeField()
     
     def __unicode__(self):
         return self.commenter + " to " + self.recipient + " at " + self.timestamp
@@ -66,7 +67,7 @@ class ProjectComment(models.Model):
     commenter = models.ForeignKey(User)
     project = models.ForeignKey(CommunityProject)
     text = models.CharField(max_length=1000)
-    timestamp = models.DateField()
+    timestamp = models.DateTimeField()
     
     def __unicode__(self):
         return self.commenter + " to " + self.project + " at " + self.timestamp
