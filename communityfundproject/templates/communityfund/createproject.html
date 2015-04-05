@@ -104,7 +104,6 @@
           <label>Who I'm working with + Our skills</label>
         </div>
         <div class="row">
-          <textarea rows="12" cols="100"></textarea>
 		  {{ project_form.who|attr:"rows:12"|attr:"cols:100" }}
         </div>
 
@@ -143,7 +142,7 @@
         <!--FUNDING GOAL-->
         <div class="row">
           <label>Funding Goal</label>
-		  {{ project.form.goal|attr:"placeholder: 100"}}
+		  {{ project_form.goal|attr:"placeholder: 100" }}
         </div>
 
         <!--FUNDING DURATION-->
