@@ -69,10 +69,10 @@
     	<div class="row">
 			{% for project in ownprojects %}
 	    	<div class="col-xs-12 col-md-4 project" style="border:black 2px solid">
-	          <h4>Project Title: project.projectName</h4>
-	          <p> Category: project.interest </p>
-	          <p> Funding Received: project.amountFunded </p>
-	          <p> Funding Target: project.goal </p>
+	          <h4>Project Title: {{ project.projectName }}</h4>
+	          <p> Category: {{ project.interest }}</p>
+	          <p> Funding Received: {{ project.amountFunded }}</p>
+	          <p> Funding Target: {{ project.goal }}</p>
 	        </div>
 			{% endfor %}
 	    </div>
@@ -81,12 +81,12 @@
 	    	<h2><a href="projectsfunded.html">Projects I'm Funding</a></h2>
 	    </div>
 	    <div class="row">
-			{% for project in contributed %}
+			{% for project in ownprojects %}
 	    	<div class="col-xs-12 col-md-4 project" style="border:black 2px solid">
-	          <h4>Project Title: project.projectName</h4>
-	          <p> Category: project.interest </p>
-	          <p> Funding Received: project.amountFunded </p>
-	          <p> Funding Target: project.goal </p>
+	          <h4>Project Title: {{ project.projectName }}</h4>
+	          <p> Category: {{ project.interest }}</p>
+	          <p> Funding Received: {{ project.amountFunded }}</p>
+	          <p> Funding Target: {{ project.goal }}</p>
 	        </div>
 			{% endfor %}
 	    </div>
@@ -95,12 +95,12 @@
 	    	<h2>Based on my interests</h2>
 	    </div>
 	    <div class="row">
-			{% for project in allprojects %}
+			{% for project in ownprojects %}
 	    	<div class="col-xs-12 col-md-4 project" style="border:black 2px solid">
-	          <h4>Project Title: project.projectName</h4>
-	          <p> Category: project.interest </p>
-	          <p> Funding Received: project.amountFunded </p>
-	          <p> Funding Target: project.goal </p>
+	          <h4>Project Title: {{ project.projectName }}</h4>
+	          <p> Category: {{ project.interest }}</p>
+	          <p> Funding Received: {{ project.amountFunded }}</p>
+	          <p> Funding Target: {{ project.goal }}</p>
 	        </div>
 			{% endfor %}
 
