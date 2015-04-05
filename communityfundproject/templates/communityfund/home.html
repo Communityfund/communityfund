@@ -68,7 +68,8 @@
 	    </div>
     	<div class="row">
 			{% for project in ownprojects %}
-	    	<div class="col-xs-12 col-md-4 project" style="border: 2px solid black;border-radius: 20px;">
+	    	<div class="col-xs-12 col-md-4 project" style="border: 2px solid black;border-radius: 20px;
+	    		padding-left: 5%">
 	          <h4> {{ project.projectName }}</h4>
 	          <p> By {{ project.initiator }}</p>
 	          <p> Category: {{ project.interest }}</p>
@@ -83,7 +84,8 @@
 	    </div>
 	    <div class="row">
 			{% for project in contributed %}
-	    	<div class="col-xs-12 col-md-4 project project-outline">
+	    	<div class="col-xs-12 col-md-4 project" style="border: 2px solid black;border-radius: 20px;
+	    		padding-left: 5%">
 	          <h4> {{ project.projectName }}</h4>
 	          <p> By {{ project.initiator }}</p>
 	          <p> Category: {{ project.interest }}</p>
@@ -98,7 +100,8 @@
 	    </div>
 	    <div class="row">
 			{% for project in allprojects %}
-	    	<div class="col-xs-12 col-md-4 project project-outline">
+	    	<div class="col-xs-12 col-md-4 project" style="border: 2px solid black;border-radius: 20px;
+	    		padding-left: 5%">
 	          <h4> {{ project.projectName }}</h4>
 	          <p> By {{ project.initiator }}</p>
 	          <p> Category: {{ project.interest }}</p>
