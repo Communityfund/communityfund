@@ -72,7 +72,7 @@ class ProjectComment(models.Model):
         return self.commenter + " to " + self.project + " at " + self.timestamp
 
 class UserInterest(models.Model):
-    interest = models.ForeignKey(Interest)
+    interest = models.ForeignKey(Interests)
     user = models.ForeignKey(User)
           
 # DEPRECATED - Need to delete     
