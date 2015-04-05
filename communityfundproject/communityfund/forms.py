@@ -24,7 +24,6 @@ class ProjectForm(forms.ModelForm):
     blurb = forms.CharField(max_length=140, widget=forms.Textarea)
     duration = forms.IntegerField()
     interest = forms.ModelChoiceField(queryset=Interests.objects.all())
-    dateCreated = forms.DateTimeField()
     why = forms.CharField(max_length=3000, widget=forms.Textarea)
     who = forms.CharField(max_length=3000, widget=forms.Textarea)
     how = forms.CharField(max_length=3000, widget=forms.Textarea)

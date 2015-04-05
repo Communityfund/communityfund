@@ -24,6 +24,7 @@
     <![endif]-->
   </head>
   <body>
+	{% if not success %}
     <nav class="navbar navbar-default navbar-inverse">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -167,7 +168,9 @@
 
       </form>
     </div>
-
+	{% else %}
+	You successfully created a project.
+	{% endif %}
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
