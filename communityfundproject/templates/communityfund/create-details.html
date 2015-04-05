@@ -1,97 +1,182 @@
 <!DOCTYPE html>
 {% load staticfiles %}
 {% load widget_tweaks %}
-<!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Fri Mar 13 2015 22:27:45 GMT+0000 (UTC) -->
-<html data-wf-site="5503114b5885f7ec108c961f" data-wf-page="55034fc05f1c768a0cb5c5f7">
-<head>
-  <meta charset="utf-8">
-  <title>Create Details - temporaryweb</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="generator" content="Webflow">
-  <link rel="stylesheet" type="text/css" href="{% static "communityfund/css/normalize.css" %}">
-  <link rel="stylesheet" type="text/css" href="{% static "communityfund/css/webflow.css" %}">
-  <link rel="stylesheet" type="text/css" href="{% static "communityfund/css/render.css" %}">
-  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
-  <script>
-    WebFont.load({
-      google: {
-        families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic"]
-      }
-    });
-  </script>
-  <script type="text/javascript" src="js/modernizr.js"></script>
-  <link rel="shortcut icon" type="image/x-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/favicon.ico">
-  <link rel="apple-touch-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png">
-</head>
-<body>
-  <div class="w-section nav-bar">
-    <div class="w-container">
-      <div class="w-row">
-        <div class="w-col w-col-6">
-          <h1>CommunityFund</h1>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Create a project - CommunityFund</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!--Custom Styles -->
+    <link rel="stylesheet" type="text/css" href="{% static "communityfund/css/createproject.css" %}">
+    <!--Font-->
+    <link href='http://fonts.googleapis.com/css?family=Mallanna' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-inverse">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">CommunityFund</a>
         </div>
-        <div class="w-col w-col-2 nav-column"><a class="nav-link" href="/communityfund/home">Projects</a>
+
+        <!-- Collect the nav links, forms, and other content for toggling-->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="/communityfund/home">Find a Project</a></li>
+            <li><a href="/communityfund/createproject">Create a Project</a></li> 
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <p>Messages Area</p>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span><span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <p>Notification Area</p>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profile<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/communityfund/profile/{{ user.username }}">My Profile</a></li>
+                <li><a href="/communityfund/editprofile">Edit Profile</a></li>
+                <li><a href="/communityfund/settings">Account Settings</a></li>
+                <li class="divider"></li>
+                <li><a href="/communityfund/logout">Log out</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="container">
+
+      <form id="project_form" name="email-form" data-name="Email Form" method="post" action="/communityfund/createdetails/" enctype="multipart/form-data">
+        
+        <!--PROJECT NAME-->
+        <div class="row">
+          <label>Project Name</label>
         </div>
-        <div class="w-col w-col-2 nav-column"><a class="nav-link" href="/communityfund/login/">Log in&nbsp;</a>
+        <div class="row">
+          <input id="projectname" type="text"></input>
         </div>
-        <div class="w-col w-col-2 nav-column"><a class="nav-link" href="/communityfund/signup/">Sign up</a>
+        
+        <!--PROJECT NAME-->
+        <div class="row">
+          <label>Why I started this project</label>
         </div>
-      </div>
+        <div class="row">
+          <textarea rows="12" cols="100"></textarea>
+        </div>
+
+        <!--PARTNERS AND SKILLS-->
+        <div class="row">
+          <label>Who I'm working with + Our skills</label>
+        </div>
+        <div class="row">
+          <textarea rows="12" cols="100"></textarea>
+        </div>
+
+        <!--HOW YOU HELP-->
+        <div class="row">
+          <label>How your funds help us</label>
+        </div>
+        <div class="row">
+          <textarea rows="12" cols="100"></textarea>
+        </div>
+
+        <!--WHY SUPPORT-->
+        <div class="row">
+          <label>Why you should support this project</label>
+        </div>
+        <div class="row">
+          <textarea rows="12" cols="100"></textarea>
+        </div>
+
+        <!--MORE INFO-->
+        <div class="row">
+          <label>More information</label>
+        </div>
+        <div class="row">
+          <textarea rows="12" cols="100"></textarea>
+        </div>
+
+        <!--FUNDING GOAL-->
+        <div class="row">
+          <label>Funding Goal</label>
+          <input type="text" placeholder=" $$$$"></input>
+        </div>
+
+        <!--FUNDING DURATION-->
+        <div class="row">
+          <label>Funding Duration</label>
+          <input type="text" placeholder="  1-90 days"></input>
+        </div>
+
+        <!--CATEGORY-->
+        <div class="row">
+          <label>Category</label>
+           <select>
+            <option value="">Arts &amp; Crafts</option>
+            <option value="">Comics</option>
+            <option value="">Community</option>
+            <option value="">Dance</option>
+            <option value="">Design</option>
+            <option value="">Education</option>
+            <option value="">Emergancies</option>
+            <option value="">Evniorment</option>
+            <option value="">Events</option>
+            <option value="">Fashion</option>
+            <option value="">Film &amp; Video</option>
+            <option value="">Food</option>
+            <option value="">Games</option>
+            <option value="">Journalism</option>
+            <option value="">Music</option>
+            <option value="">Photography</option>
+            <option value="">Publishing</option>
+            <option value="">Technology</option>
+            <option value="">Theatre</option>
+          </select> 
+        </div>
+
+        <!--IMAGE UPLOAD-->
+        <div class="row">
+          <label>Project Image</label>
+          <input type="file" />
+        </div>
+
+        <button type="submit">Create Project</button>
+
+      </form>
     </div>
-  </div>
-  <div class="w-section default project-page">
-    <div class="w-container create-background">
-      <h1>Start building your project!</h1>
-      <h1 class="subheading">Add an image, a goal, and other important details.</h1>
-      <div class="w-form">
-        <form class="rounding" id="project_form" name="email-form" data-name="Email Form" method="post" action="/communityfund/createdetails/" enctype="multipart/form-data">
-			{% csrf_token %}
-          <label class="black-text" for="projects-2">Project Title</label>
-		  {{ project_form.projectName|add_class:"w-input rounding"|attr:"placeholder:Project name"}}
-          <label class="black-text" for="blurb">Blurb</label>
-		  {{ project_form.description|add_class:"w-input rounding"|attr:"placeholder:My project is meant to help fund local schools, so that they can continue providing a great education for youth in their communities!"}}
-          <label class="black-text" for="projects-2">Interest</label>
-		  {{ project_form.interest|add_class:"w-select create-selection"}}
-          <label class="black-text" for="duration">Funding Duration</label>
-		  {{ project_form.duration|add_class:"w-input rounding"|attr:"placeholder:1-60 days, we recommend 30 or less"}}
-          <label class="black-text" for="funding">Funding Goal</label>
-		  {{ project_form.goal|add_class:"w-input rounding"|attr:"placeholder:0"}}
-          <input class="w-button create-submit" type="submit" value="Submit" data-wait="Please wait..." />
-        </form>
-        <div class="w-form-done">
-          <p>Thank you! Your submission has been received!</p>
-        </div>
-        <div class="w-form-fail">
-          <p>Oops! Something went wrong while submitting the form :(</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="w-section footer">
-    <div class="w-container">
-      <div class="w-row footer">
-        <div class="w-col w-col-4">
-          <h1>Content</h1>
-          <div class="footer-text">This website is still under development. You can keep checking back every once in a while to see what content comes out.</div>
-        </div>
-        <div class="w-col w-col-4">
-          <h1>Links</h1><a class="footer-text" href="/communityfund/about/">About Us</a>
-        </div>
-        <div class="w-col w-col-4">
-          <h1>Newsletter</h1>
-          <div class="footer-text">In the future, we’re going to create a newsletter for all our visitors.&nbsp;</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="w-section default">
-    <div class="w-container">
-      <div class="copyright-text">© 2015 | CommunityFund</div>
-    </div>
-  </div>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/webflow.js"></script>
-  <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
-</body>
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  </body>
 </html>
