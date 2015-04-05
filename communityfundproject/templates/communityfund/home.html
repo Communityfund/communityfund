@@ -81,7 +81,7 @@
 	    	<h2><a href="projectsfunded.html">Projects I'm Funding</a></h2>
 	    </div>
 	    <div class="row">
-			{% for project in ownprojects %}
+			{% for project in contributed %}
 	    	<div class="col-xs-12 col-md-4 project" style="border:black 2px solid">
 	          <h4>Project Title: {{ project.projectName }}</h4>
 	          <p> Category: {{ project.interest }}</p>
@@ -95,7 +95,7 @@
 	    	<h2>Based on my interests</h2>
 	    </div>
 	    <div class="row">
-			{% for project in ownprojects %}
+			{% for project in allprojects %}
 	    	<div class="col-xs-12 col-md-4 project" style="border:black 2px solid">
 	          <h4>Project Title: {{ project.projectName }}</h4>
 	          <p> Category: {{ project.interest }}</p>
