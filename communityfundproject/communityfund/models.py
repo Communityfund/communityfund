@@ -36,6 +36,34 @@ class CommunityProject(models.Model):
     
     def __unicode__(self):
         return self.projectName
+
+class Payment(models.Model):
+    backer = models.ForeignKey(Users)
+    project = models.ForeignKey(Projects)
+    amount = models.IntegerField()
+    isDonation = models.BinaryField()
+    timestamp = models.DateField()
+    
+    def __unicode__(self):
+        return self.backer + ", " + self.timestamp
+
+class Comment(models.Model):
+    commenter = models.ForeignKey(Users, related_name='commenter')
+    recipient = models.ForeignKey(Users, related_name='recipient')  
+    text = models.CharField(max_length=1000)
+    timestamp = models.DateField()
+    
+    def __unicode__(self):
+        return self.commenter + " to " + self.recipient + " at " + self.timestamp
+
+class ProjectComment(models.Model):
+    commenter = models.ForeignKey(Users)
+    project = models.ForeignKey(Projects)
+    text = models.CharField(max_length=1000)
+    timestamp = models.DateField()
+    
+    def __unicode__(self):
+        return self.commenter + " to " + self.project + " at " + self.timestamp
         
 # DEPRECATED - Need to delete     
 class Usernames(models.Model):
@@ -58,24 +86,5 @@ class CommunityProjects(models.Model):
     
     def __unicode__(self):
         return self.projectName
-        
-#class Payments(models.Model):
-#    backer = models.ForeignKey(Users, limit_choices_to={'userName'})
-#    projectID = models.ForeignKey(Projects)
-#    amount = models.IntegerField()
-#    isDonation = models.BinaryField()
-#    timestamp = models.DateField()
-    
-#    def __unicode__(self):
-#        return self.backer + ", " + self.project
-
-#class Comments(models.Model):
-#    commenter = models.ForeignKey(Users, limit_choices_to={'userName'}, related_name='commenter')
-#    recipient = models.ForeignKey(Users, limit_choices_to={'userName'}, related_name='recipient')  
-#    text = models.CharField(max_length=256)
-#    timestamp = models.DateField()
-    
-#    def __unicide__(self):
-#        return self.commenter + " to " + self.recipient + ": " + self.text
         
 # Create your models here.

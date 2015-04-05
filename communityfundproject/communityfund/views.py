@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from communityfund.models import Communities, Interests, UserProfile, CommunityProject
+from communityfund.models import Communities, Interests, UserProfile, CommunityProject, Payment, Comment, ProjectComment
 from django.contrib.auth.models import User
 from communityfund.forms import UserForm, UserProfileForm, ProjectForm
 from django.contrib.auth import authenticate, login, logout
@@ -69,15 +69,29 @@ def signup(request):
     return render(request, 'communityfund/signup.html', {'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
 
 def home(request):
-    # Load either the logged in or out version of the page
     if request.user.is_authenticated():
+        # If the user is logged in, load all of the projects the user as donated to,
+        # all of their projects, and all other projects.
+        
+        # Get the user's contributed to projects
+        contributed = Payment.objects.all().filter(user=request.user).values('project')
+        
+        # Get the user's own projects
+        ownprojects = CommunityProject.objects.all().filter(intiator=request.user)
+        
+        # Get all the other projects
         community = UserProfile.objects.all().filter(user=request.user)[0].community
-        context_dict = {'projects': CommunityProject.objects.all().filter(community=community)}
-        return render(request, 'communityfund/homeL.html', context_dict)
+        allprojects = CommunityProject.objects.all().filter(community=community)
+        
+        context_dict = {'allprojects': CommunityProject.objects.all().filter(community=community)}
+        context_dict['contributed'] = contributed
+        context_dict['ownprojects'] = ownprojects
+        
     else:
-        # Temporary work around until we add in user-restricted pages in the next phase
-        context_dict = {'projects': CommunityProject.objects.all()}
-        return render(request, 'communityfund/homeNL.html', context_dict)
+        # If the user is not logged in, just load all of the projects in the database
+        context_dict = {'allprojects': CommunityProject.objects.all()}
+
+    return render(request, 'communityfund/home.html', context_dict)
 
 def createproject(request):
     # Only allow logged in users to create a project
