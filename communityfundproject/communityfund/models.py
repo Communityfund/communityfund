@@ -48,8 +48,8 @@ class Payment(models.Model):
         return self.backer + ", " + self.timestamp
 
 class Comment(models.Model):
-    commenter = models.ForeignKey(Users, related_name='commenter')
-    recipient = models.ForeignKey(Users, related_name='recipient')  
+    commenter = models.ForeignKey(UserProfile, related_name='commenter')
+    recipient = models.ForeignKey(UserProfile, related_name='recipient')  
     text = models.CharField(max_length=1000)
     timestamp = models.DateField()
     
