@@ -33,7 +33,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 	      </button>
-          <a class="navbar-brand" href="home.html">CommunityFund</a>
+          <a class="navbar-brand" href="/">CommunityFund</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling-->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -75,7 +75,7 @@
         <h2>Projects Started</h2>
       </div>
 
-    	<div class="row">
+    	<div class="row" style="margin-left: 40px;">
     		{% for project in ownprojects %}
 	    	<div class="project" style="border:black 2px solid">
 	          <h4> {{ project.projectName }}</h4>
@@ -89,7 +89,7 @@
 
 	      </div><!--row-->
 
-	    <div class="row">
+	    <div class="row" style="margin-left: 40px;">
 	    	<h2>Projects I'm Funding</h2>
 	    </div>
 
@@ -107,7 +107,7 @@
 	    </div>
 
 
-	    <div class="row">
+	    <div class="row" style="margin-left: 40px;">
 	    	<h2>Interesting Projects</h2>
 	    </div>
 
@@ -122,10 +122,8 @@
 	          <p> Funding Target: {{ project.goal }}</p>
 	        </div>
 			{% endfor %}
-
-		<p><a href="/communityfund/next">See more</a></p>
 	    </div><!--row-->
-
+      <p><a href="/communityfund/next">See more</a></p>
 	  
 	</div><!--container-->
 
