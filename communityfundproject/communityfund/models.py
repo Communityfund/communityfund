@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.template.defaultfilters import slugify
 
 class Communities(models.Model):
     community = models.CharField(max_length=32)
@@ -40,6 +41,8 @@ class CommunityProject(models.Model):
     description = models.CharField(max_length=1000)
     duration = models.IntegerField()
     dateCreated = models.DateTimeField()
+    blurb = models.CharField(max_length=140)
+    slug = models.SlugField()
     
     def __unicode__(self):
         return self.projectName

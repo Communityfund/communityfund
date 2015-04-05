@@ -1,10 +1,8 @@
 
 body{ 
-background: url("https://download.unsplash.com/photo-1415201179613-bd037ff5eb29") no-repeat center center fixed; 
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
+background: url("struckaxiom.png") repeat;
+  color: black;
+  text-align: center; 
 }
 
 .cover-heading{
@@ -55,11 +53,7 @@ body {
   height: 100%;
   background-color: #333;
 }
-body {
-  color: black;
-  text-align: center;
-  
-}
+
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {

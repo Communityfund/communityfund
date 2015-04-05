@@ -2,6 +2,16 @@ h1{
 	text-align: center;
 }
 
+p{
+	font-size: 16px;
+}
+
+body{
+	font-family: Mallanna;
+	background-image: url(struckaxiom.png);
+	background-repeat: repeat;
+}
+
 .rep{
 	list-style: none;
 }

@@ -1,8 +1,9 @@
 body {
-  padding-top: 40px;
+
   padding-bottom: 40px;
   font-family: Mallanna;
-  background-color: #BCD7E0;
+  background-image: url(struckaxiom.png);
+  background-repeat: repeat;
 
 }
 
@@ -45,4 +46,15 @@ body {
   margin-bottom: -1px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.mm{
+  float: left;
+  max-width: 100px;
+  margin-left: 20px;
+}
+
+.seccode{
+  max-width: 100px;
+  margin-left: 80px;
 }

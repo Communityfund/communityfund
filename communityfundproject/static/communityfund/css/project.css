@@ -1,0 +1,23 @@
+.projectimage{
+	float: left;
+	margin: 30px;
+	border: solid black 2px;
+}
+
+.stats{
+	margin: 30px;
+}
+
+.footer{
+	margin-bottom: 50px;
+}
+
+body{
+	font-family: Mallanna;
+	background-image: url(struckaxiom.png);
+	background-repeat: repeat;
+}
+
+p{
+	font-size: 16px;
+}
