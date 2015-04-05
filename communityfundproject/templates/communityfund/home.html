@@ -25,14 +25,14 @@
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <a class="navbar-brand" href="home.html">CommunityFund</a>
+          <a class="navbar-brand" href="/">CommunityFund</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling-->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="find.html">Find a Project</a></li>
-            <li><a href="createproject.html"l>Create a Project</a></li> 
+            <li><a href="/communityfund/find">Find a Project</a></li>
+            <li><a href="/communityfund/createproject">Create a Project</a></li> 
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
@@ -50,11 +50,11 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profile<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="profile.html">My Profile</a></li>
-                <li><a href="editprofile.html">Edit Profile</a></li>
-                <li><a href="settings.html">Account Settings</a></li>
+                <li><a href="/communityfund/profile">My Profile</a></li>
+                <li><a href="/communityfund/editprofile">Edit Profile</a></li>
+                <li><a href="/communityfund/settings">Account Settings</a></li>
                 <li class="divider"></li>
-                <li><a href="#">Log out</a></li>
+                <li><a href="/">Log out</a></li>
               </ul>
             </li>
           </ul>
@@ -64,12 +64,14 @@
     
     <div class="container">
 	    <div class="row">
-	    	<h2><a href="projectsstarted.html">Projects Started</a></h2>
+	    	<h2>Projects Started</h2>
 	    </div>
     	<div class="row">
 			{% for project in ownprojects %}
-	    	<div class="col-xs-12 col-md-4 project" style="border:black 2px solid">
-	          <h4>Project Title: {{ project.projectName }}</h4>
+	    	<div class="col-xs-12 col-md-4 project" style="border: 2px solid black;border-radius: 20px;
+	    		padding-left: 5%;">
+	          <h4> {{ project.projectName }}</h4>
+	          <p> By {{ project.initiator }}</p>
 	          <p> Category: {{ project.interest }}</p>
 	          <p> Funding Received: {{ project.amountFunded }}</p>
 	          <p> Funding Target: {{ project.goal }}</p>
@@ -78,12 +80,14 @@
 	    </div>
 		
 	    <div class="row">
-	    	<h2><a href="projectsfunded.html">Projects I'm Funding</a></h2>
+	    	<h2>Projects I'm Funding</h2>
 	    </div>
 	    <div class="row">
 			{% for project in contributed %}
-	    	<div class="col-xs-12 col-md-4 project" style="border:black 2px solid">
-	          <h4>Project Title: {{ project.projectName }}</h4>
+	    	<div class="col-xs-12 col-md-4 project" style="border: 2px solid black;border-radius: 20px;
+	    		padding-left: 5%;">
+	          <h4> {{ project.projectName }}</h4>
+	          <p> By {{ project.initiator }}</p>
 	          <p> Category: {{ project.interest }}</p>
 	          <p> Funding Received: {{ project.amountFunded }}</p>
 	          <p> Funding Target: {{ project.goal }}</p>
@@ -96,15 +100,17 @@
 	    </div>
 	    <div class="row">
 			{% for project in allprojects %}
-	    	<div class="col-xs-12 col-md-4 project" style="border:black 2px solid">
-	          <h4>Project Title: {{ project.projectName }}</h4>
+	    	<div class="col-xs-12 col-md-4 project" style="border: 2px solid black;border-radius: 20px;
+	    		padding-left: 5%;">
+	          <h4> {{ project.projectName }}</h4>
+	          <p> By {{ project.initiator }}</p>
 	          <p> Category: {{ project.interest }}</p>
 	          <p> Funding Received: {{ project.amountFunded }}</p>
 	          <p> Funding Target: {{ project.goal }}</p>
 	        </div>
 			{% endfor %}
 
-	        <p><a href="#">See more</a></p>
+	        <p><a href="/communityfund/next">See more</a></p>
 	    </div>
 	</div><!--container-->
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
