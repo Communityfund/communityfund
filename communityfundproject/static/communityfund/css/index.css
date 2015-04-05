@@ -1,3 +1,29 @@
+
+body{ 
+background: url("https://download.unsplash.com/photo-1415201179613-bd037ff5eb29") no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+.cover-heading{
+  font-family: "Mallanna";
+  font-size: 64px;
+}
+
+.lead{
+    font-family: "Mallanna";
+}
+
+
+
+li{
+    font-family: "Mallanna";
+    list-style: none;
+}
+
+
 /*
  * Globals
  */
@@ -30,9 +56,9 @@ body {
   background-color: #333;
 }
 body {
-  color: #fff;
+  color: black;
   text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -80,17 +106,16 @@ body {
 .masthead-nav > li > a {
   padding-right: 0;
   padding-left: 0;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
-  color: #fff; /* IE8 proofing */
-  color: rgba(255,255,255,.75);
+  color: black; /* IE8 proofing */
 
 }
 .masthead-nav > li > a:hover,
 .masthead-nav > li > a:focus {
   background-color: transparent;
   border-bottom-color: #a9a9a9;
-  border-bottom-color: rgba(255,255,255,.25);
+  border-bottom-color: black;
 }
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
@@ -166,30 +191,4 @@ body {
   .cover-container {
     width: 700px;
   }
-}
-
-
-/* Add in content for about page. */
- .team-member {
-    display: block;
-    margin-right: auto;
-    margin-bottom: 20px;
-    margin-left: auto;
-  }
-
-.team-member-image.abrar {
-  background-image: url('../images/abrar.jpg');
-  background-position: 58% -15px;
-  background-size: 360px;
-}
-
-.team-member-image.john {
-  background-image: url('../images/john.jpg');
-  background-position: 46% -189px;
-  background-attachment: scroll;
-}
-
-.team-member-image.mohammad {
-  background-image: url('../images/mohammad.jpg');
-  background-size: 250px;
 }

@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-{% load widget_tweaks %}
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Sign up</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- Custom style -->
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <!-- Font -->
+    <link href='http://fonts.googleapis.com/css?family=Mallanna' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,77 +22,67 @@
     <![endif]-->
   </head>
   <body>
-    <p> <br/></p>
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-8">
-
-        <div class="panel panel-default">
-          <div class="panel-body">
-			{% if not registered %}
-            <div class="page-header"style="margin-top:5px;">
-              <h2>Sign up!</h2>
-            </div>
-              <form class="form-horizontal", id="user_form" method="post" action="/communityfund/signup/" enctype="multipart/form-data">
-				{% csrf_token %}
-                <div class="form-group">
-                  <label for="username" class="col-sm-2 control-label">Username</label>
-                  <div class="col-sm-10">
-			{{ user_form.username|add_class:"form-control"|attr:"placeholder:Username"|attr:"id:username"}}
-                 </div>
-                </div>
-                <div class="form-group">
-                	<label for="firstName" class="col-sm-2 control-label">First Name</label>
-                  <div class="col-sm-10">
-			{{ profile_form.firstName|add_class:"form-control"|attr:"placeholder:First Name"|attr:"id:firstName"}}
-                  </div>
-                </div>
-                  
-                
-                <div class="form-group">
-                  <label for="inputln3" class="col-sm-2 control-label">Last Name</label>
-                  <div class="col-sm-10">
-                    {{ profile_form.lastName|add_class:"form-control"|attr:"placeholder:Last Name"|attr:"id:inputln3"}}
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-2 control-label">Community</label>
-                  <div class="col-sm-10">
-                    {{ profile_form.community|add_class:"form-control" }}
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-                  <div class="col-sm-10">
-                    {{ user_form.email|add_class:"form-control"|attr:"placeholder:Email"|attr:"id:inputEmail3"}}
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                  <div class="col-sm-10">
-                    {{ user_form.password|add_class:"form-control"|attr:"placeholder:Password"|attr:"id:inputPassword3"}}
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-10">
-                    <input type="submit" class="btn btn-default" value="Sign up" />
-                  </div>
-                </div>
-              </form>
-			  {% else %}
-              <div class="page-header"style="margin-top:5px;">
-                <h2>Thank you!</h2>
-              </div>
-			  {% endif %}
-          </div>
-        </div>
+    <div class="container">
+	{% if not registered %}
+      <div class="page-header"style="margin-top:5px;">
+        <h2>Sign up!</h2>
       </div>
-      <div class="col-md-2"></div>
-    </div>
+        <form class="form-horizontal", id="user_form" method="post" action="/communityfund/signup/" enctype="multipart/form-data">
+		{% csrf_token %}
+          <div class="form-group">
+            <label for="username" class="col-sm-2 control-label">Username</label>
+            <div class="col-sm-10">
+	{{ user_form.username|add_class:"form-control"|attr:"placeholder:Username"|attr:"id:username"}}
+           </div>
+          </div>
+          <div class="form-group">
+          	<label for="firstName" class="col-sm-2 control-label">First Name</label>
+            <div class="col-sm-10">
+	{{ profile_form.firstName|add_class:"form-control"|attr:"placeholder:First Name"|attr:"id:firstName"}}
+            </div>
+          </div>
+            
+          
+          <div class="form-group">
+            <label for="inputln3" class="col-sm-2 control-label">Last Name</label>
+            <div class="col-sm-10">
+              {{ profile_form.lastName|add_class:"form-control"|attr:"placeholder:Last Name"|attr:"id:inputln3"}}
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Community</label>
+            <div class="col-sm-10">
+              {{ profile_form.community|add_class:"form-control" }}
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+              {{ user_form.email|add_class:"form-control"|attr:"placeholder:Email"|attr:"id:inputEmail3"}}
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+              {{ user_form.password|add_class:"form-control"|attr:"placeholder:Password"|attr:"id:inputPassword3"}}
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <input type="submit" class="btn btn-default" value="Sign up" />
+            </div>
+          </div>
+        </form>
+	  {% else %}
+        <div class="page-header"style="margin-top:5px;">
+          <h2>Thank you!</h2>
+        </div>
+	  {% endif %}
+    </div> <!-- /container -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   </body>
 </html>

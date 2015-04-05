@@ -12,20 +12,11 @@ def index(request):
 def about(request):
     return render(request, 'communityfund/about.html')
 
-def intro(request):
-    return render(request, 'communityfund/intro.html')
-
 def topprojects(request):
     return render(request, 'communityfund/top-projects.html')
     
 def projects(request):
     return render(request, 'communityfund/projects.html')
-    
-def create(request):
-    return render(request, 'communityfund/create.html')
-    
-def createdetail(request):
-    return render(request, 'communityfund/create-details.html')
 
 def user_login(request):
     if request.method == 'POST':
@@ -89,13 +80,13 @@ def home(request):
         return render(request, 'communityfund/homeNL.html', context_dict)
 
 def createproject(request):
-    # Load either the logged in or out version of the page
+    # Only allow logged in users to create a project
     if request.user.is_authenticated():
         context_dict = {'interests': Interests.objects.all()}
         return render(request, 'communityfund/create.html', context_dict)
     else:
         return HttpResponse("Restricted Page. Please login to access.")
-        
+
 def intro(request):
     # Load either the logged in or out version of the page
     if request.user.is_authenticated():
@@ -103,16 +94,19 @@ def intro(request):
     else:
         return render(request, 'communityfund/introNL.html')
 
+# Log out the user
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect('/communityfund/')
 
 def createdetails(request):
+    # Only allow logged in users to create a project.
     if request.user.is_authenticated():
         success = False
+        
+        # If a 'POST' was received, submit the form info to the database
         if request.method == 'POST':
             project_form = ProjectForm(data=request.POST)
-            success = project_form.is_valid()
             if project_form.is_valid():
                 project = project_form.save(commit=False)
                 project.backers = 0
@@ -125,7 +119,8 @@ def createdetails(request):
                 project_form.errors
         else:
             project_form = ProjectForm()
-            
+        
+        # 'GET' was received, so load the page
         context_dict = {'interests': Interests.objects.all()}
         context_dict['project_form'] = project_form
         context_dict['success'] = success
