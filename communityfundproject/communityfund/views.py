@@ -104,7 +104,7 @@ def createproject(request):
                 project.backers = 0
                 project.amountFunded = 0
                 project.initiator = request.user
-                project.community = UserProfile.objects.all().filter(user=request.user).values('community')
+                project.community = UserProfile.objects.all().filter(user=request.user)[0].community
                 project.dateCreated = datetime.now()
                 project.save()
                 success = True
