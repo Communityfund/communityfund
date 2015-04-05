@@ -19,6 +19,12 @@ class UserProfile(models.Model):
     lastName = models.CharField(max_length=32)
     user = models.OneToOneField(User)
     community = models.ForeignKey(Communities)
+    projectsCreated = models.IntegerField()
+    projectsFunded = models.IntegerField()
+    reputation = models.IntegerField()
+    aboutText = models.CharField(max_length=1000)
+    skills = models.CharField(max_length=1000)
+    interests = models.CharField(max_length=1000)
     
     def __unicode__(self):
         return self.user.username
@@ -38,7 +44,7 @@ class CommunityProject(models.Model):
         return self.projectName
 
 class Payment(models.Model):
-    backer = models.ForeignKey(UserProfile)
+    backer = models.ForeignKey(User)
     project = models.ForeignKey(CommunityProject)
     amount = models.IntegerField()
     isDonation = models.BinaryField()
@@ -48,8 +54,8 @@ class Payment(models.Model):
         return self.backer + ", " + self.timestamp
 
 class Comment(models.Model):
-    commenter = models.ForeignKey(UserProfile, related_name='commenter')
-    recipient = models.ForeignKey(UserProfile, related_name='recipient')  
+    commenter = models.ForeignKey(User, related_name='commenter')
+    recipient = models.ForeignKey(User, related_name='recipient')  
     text = models.CharField(max_length=1000)
     timestamp = models.DateField()
     
@@ -57,14 +63,18 @@ class Comment(models.Model):
         return self.commenter + " to " + self.recipient + " at " + self.timestamp
 
 class ProjectComment(models.Model):
-    commenter = models.ForeignKey(UserProfile)
+    commenter = models.ForeignKey(User)
     project = models.ForeignKey(CommunityProject)
     text = models.CharField(max_length=1000)
     timestamp = models.DateField()
     
     def __unicode__(self):
         return self.commenter + " to " + self.project + " at " + self.timestamp
-        
+
+class UserInterest(models.Model):
+    interest = models.ForeignKey(Interest)
+    user = models.ForeignKey(User)
+          
 # DEPRECATED - Need to delete     
 class Usernames(models.Model):
     userName = models.CharField(max_length=32, unique=True, primary_key=True)

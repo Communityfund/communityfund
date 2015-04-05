@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from communityfund.models import Communities, Interests, UserProfile, CommunityProject, Payment, Comment, ProjectComment
+from communityfund.models import Communities, Interests, UserProfile, CommunityProject, Payment, Comment, ProjectComment, UserInterest
 from django.contrib.auth.models import User
 from communityfund.forms import UserForm, UserProfileForm, ProjectForm
 from django.contrib.auth import authenticate, login, logout
@@ -141,4 +141,24 @@ def createdetails(request):
         return render(request, 'communityfund/create-details.html', context_dict)
     else:
         return HttpResponse("Restricted Page. Please login to access.")
+
+def profile(request, profile_name):
+    context_dict = {}
+    
+    try:
+        user_info = User.objects.all().filter(username=profile_name)[0]
+        user_profile = UserProfile.objects.all().filter(user=user_info)[0]
+        user_projects = CommunityProject.objects.all().filter(initiator=user_info)
+        backed_projects = Payment.objects.all().filter(backer=user_info).values('project')
+        interests = Interests.objects.all().filter(user=user_info)
+        
+        context_dict['user_info'] = user_info
+        context_dict['user_profile'] = user_profile
+        context_dict['user_projects'] = user_projects
+        context_dict['backed_projects'] = backed_projects
+        context_dict['interests'] = interests
+        
+    except (User.DoesNotExist, UserProfile.DoesNotExist) as e:
+        pass
+    return render(request, 'communityfund/project.html', context_dict)
 # Create your views here.

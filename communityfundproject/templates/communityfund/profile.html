@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>User Profile</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static "communityfund/css/profile.css" %}">
+    <link rel="stylesheet" href="{% static "communityfund/css/home.css" %}">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-inverse">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="home.html">CommunityFund</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling-->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="find.html">Find a Project</a></li>
+            <li><a href="createproject.html"l>Create a Project</a></li> 
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <p>MESSAGES AREA</p>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span><span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <p>NOTIFICATION AREA</p>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profile<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="communityfund/profile/{{ user.username }}">My Profile</a></li>
+                <li><a href="editprofile.html">Edit Profile</a></li>
+                <li><a href="settings.html">Account Settings</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Log out</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+	{% if user_info and user_profile %}
+    <div class="container">
+      <div class="row">
+          <h1> <img src="" height="200" width="200" style="border:solid black 2px"> {{ user_profile.firstName }} {{ user_profile.lastName }}</h1>
+          <ul class="rep list-inline">
+            <li>Projects Funded: {{ user_profile.projectsFunded }}</li>
+            <li>Projects Started: {{ user_profile.projectsCreated }}</li>
+            <li>Total CommunityFund Points: {{ user_profile.reputation }}</li>
+          </ul>
+      </div>
+      <div class="row">
+        <h3>About me</h3>
+        <p>{{ user_profile.aboutText }}</p>
+      </div>
+      <div class="row">
+        <h3>Professional Skills</h3>
+        <p>{{ user_profile.skills }}</p>
+      </div>
+      <div class="row">
+        <h3>Interested in Funding</h3>
+        <p>{{ user_profile.interests }}</p>
+      </div>
+      <div class="row">
+        <h3>Interests</h3>
+        <ul>
+		  {% for interest in interests %}
+          <li>interest.interest</li>
+		  {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <h3><a href="projectsstarted.html">Projects Started</a></h3>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+		{% for project in user_projects %}
+        <div class="project" style="border:black 2px solid">
+            <h4>{{ project.projectName }}</h4>
+            <p> {{ project.interest }} </p>
+            <p> ${{ project.amountFunded }}</p>
+            <p> ${{ project.goal }} </p>
+        </div>
+		{% endfor %}
+      </div>
+    </div>
+    <div class="container">
+      <h3><a href="projectsstarted.html">Projects Funded</a></h3>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+  		{% for project in backed_projects %}
+          <div class="project" style="border:black 2px solid">
+              <h4>{{ project.projectName }}</h4>
+              <p> {{ project.interest }} </p>
+              <p> ${{ project.amountFunded }}</p>
+              <p> ${{ project.goal }} </p>
+          </div>
+  		{% endfor %}
+        </div>
+      </div>
+    </div>
+	{% else %}
+	The requested user does not exist.
+	{% endif %}
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  </body>
+</html>
+

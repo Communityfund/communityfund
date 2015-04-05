@@ -12,4 +12,5 @@ urlpatterns = patterns('',
         url(r'^createproject/$', views.createproject, name='createproject'),
         url(r'^intro/$', views.intro, name='intro'),
         url(r'^logout/$', views.user_logout, name='logout'),
-        url(r'^about/$', views.about, name='about'))
+        url(r'^about/$', views.about, name='about'),
+        url(r'^profile/(?P<profile_name>[\w\-]+)/$', views.profile, name='profile'))
