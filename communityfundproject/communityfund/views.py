@@ -191,7 +191,11 @@ def projects(request, project_name):
         if p:
             p = p[0]
         u = CommunityProject.objects.all().filter(slug=project_name).values('initiator')
+        if u:
+            u = u[0]
         profile = UserProfile.objects.all().filter(user=u)
+        if profile:
+            profile = profile[0]
         
         context_dict['project'] = p
         context_dict['profile'] = profile
