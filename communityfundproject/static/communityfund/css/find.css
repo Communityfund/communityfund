@@ -1,0 +1,11 @@
+ul{
+	list-style: none;
+}
+
+li > a > h1{
+	margin: 20px;
+}
+
+body{
+	text-align: center;
+}
