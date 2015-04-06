@@ -72,7 +72,7 @@
 
 
      <div class="container">
-      <form class="form-signin" id="payment_form" data-name="Payment Form" method="post" action="/communityfund/payment/{{ project_name }}" enctype="multipart/form-data">
+      <form class="form-signin" id="payment_form" data-name="Payment Form" method="post" action="/communityfund/payment/{{ project_name }}/" enctype="multipart/form-data">
 		{% csrf_token %}
         <h2 class="form-signin-heading">Thank you for choosing to fund this project! </h2>
         <br/>
