@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	{% if project %}
-    <title>project.projectName</title>
+    <title>{{ project.projectName }}</title>
 	{% else %}
 	<title>Project Not Found</title>
 	{% endif %}
@@ -43,8 +43,8 @@
         <!-- Collect the nav links, forms, and other content for toggling-->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="find.html">Find a Project</a></li>
-            <li><a href="createproject.html"l>Create a Project</a></li> 
+            <li><a href="/communityfund/">Find a Project</a></li>
+            <li><a href="/communityfund/createproject"l>Create a Project</a></li> 
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
@@ -62,11 +62,11 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profile<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="profile.html">My Profile</a></li>
-                <li><a href="editprofile.html">Edit Profile</a></li>
-                <li><a href="settings.html">Account Settings</a></li>
+                <li><a href="/communityfund/profile/{{ user.username }}">My Profile</a></li>
+                <li><a href="/communityfund/editprofile">Edit Profile</a></li>
+                <li><a href="/communityfund/settings">Account Settings</a></li>
                 <li class="divider"></li>
-                <li><a href="#">Log out</a></li>
+                <li><a href="/communityfund/logout">Log out</a></li>
               </ul>
             </li>
           </ul>
@@ -79,7 +79,7 @@
 
       <div class="row"> 
         <div class="projectimage">
-          <img src="" height="385" width="385" style="border:black 2px">
+          <img src="{{ project.picture }}" height="385" width="385" style="border:black 2px">
         </div>
 
         <div class="stats">
