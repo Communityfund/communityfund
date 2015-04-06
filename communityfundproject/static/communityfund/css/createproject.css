@@ -7,12 +7,13 @@ input, select{
 	margin-bottom: 20px;
 }
 
-#projectname{
+#projectname, #firstname, #lastname, #updateemail, #updatepassword{
 	width: 625px;
 }
 
 body{
 	font-family: Mallanna;
-	background-image: url(../imgages/struckaxiom.png);
+	background-image: url(struckaxiom.png);
 	background-repeat: repeat;
 }
+
