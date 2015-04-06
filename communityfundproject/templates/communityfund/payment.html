@@ -78,50 +78,49 @@
 
           <h3>Amount</h3>
           <label for="amount" class="sr-only">Amount</label>
-          <input type="text" id="amount" class="form-control" placeholder="100" required autofocus>
 		  {{ payment_form.amount|add_class:"form-control"|attr:"placeholder:100"|attr:"required" }}
           <br/>
 		  
           <h3>Billing Address</h3>
           <label for="firstname" class="sr-only">First Name</label>
-          <text type="text" id="firstname" class="form-control" placeholder="First Name" required autofocus>
+          <input type="text" id="firstname" class="form-control" placeholder="First Name" required autofocus>
           <br/>
           <label for="lastname" class="sr-only">Last Name</label>
-          <text type="text" id="lastname" class="form-control" placeholder="Last Name" required>
+          <input type="text" id="lastname" class="form-control" placeholder="Last Name" required>
           <br/>
           <label for="address" class="sr-only">Address</label>
-          <text type="text" id="address" class="form-control" placeholder="Address" required>
+          <input type="text" id="address" class="form-control" placeholder="Address" required>
           <br/>
           <label for="city" class="sr-only">City</label>
-          <text type="text" id="city" class="form-control" placeholder="City" required>
+          <input type="text" id="city" class="form-control" placeholder="City" required>
           <br/>
           <label for="province" class="sr-only">Province</label>
-          <text type="text" id="province" class="form-control" placeholder="Province" required>
+          <input type="text" id="province" class="form-control" placeholder="Province" required>
           <br/>
           <label for="postalcode" class="sr-only">Postal Code</label>
-          <text type="text" id="postalcode" class="form-control" placeholder="A0A1B2" required>
+          <input type="text" id="postalcode" class="form-control" placeholder="A0A1B2" required>
           <br/>
 
 
           <h3>Payment</h3>
           <label for="cardnumber" class="sr-only">Card Number</label>
-          <text type="text" id="cardnumber" class="form-control" placeholder="Card Number" required>
+          <input type="text" id="cardnumber" class="form-control" placeholder="Card Number" required>
           <br/>
 
           <div class="mm">
           <label for="month" class="sr-only">Expiry Month</label>
-          <text type="text" id="month" class="form-control" placeholder="MM" required>
+          <input type="text" id="month" class="form-control" placeholder="MM" required>
           <br/>
           </div>
           <div class="mm">
            <label for="year" class="sr-only">Expiry Year</label>
-          <text type="text" id="year" class="form-control" placeholder="YY" required>
+          <input type="text" id="year" class="form-control" placeholder="YY" required>
           </div>
           <br/>
           
           <div class="seccode">
           <label for="securitycode" class="sr-only">Secuirty Code</label>
-          <text type="text" id="securitycode" class="form-control" placeholder="XXX" required>
+          <input type="text" id="securitycode" class="form-control" placeholder="XXX" required>
           <br/>
           </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Submit Payment</button>
