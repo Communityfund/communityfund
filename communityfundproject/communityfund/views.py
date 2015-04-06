@@ -214,7 +214,7 @@ def payment(request, project_name):
         if request.method == 'POST':
             payment_form = PaymentForm(data=request.POST)
             if payment_form.is_valid():
-                project = CommunityProject.objects.all().filter(slug=project_name)
+                project = CommunityProject.objects.get(slug=project_name)
             
                 # Insert the payment info
                 payment = payment_form.save(commit=False)
