@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from communityfund.models import Communities, Interests, CommunityProject, UserProfile
+from communityfund.models import Communities, Interests, CommunityProject, UserProfile, Payment
 
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
@@ -20,7 +20,7 @@ class UserProfileForm(forms.ModelForm):
 
 class ProjectForm(forms.ModelForm):
     projectName = forms.CharField(max_length=32)
-    goal = forms.IntegerField()
+    goal = forms.FloatField()
     blurb = forms.CharField(max_length=140, widget=forms.Textarea)
     duration = forms.IntegerField()
     interest = forms.ModelChoiceField(queryset=Interests.objects.all())
@@ -34,3 +34,9 @@ class ProjectForm(forms.ModelForm):
     class Meta:
         model = CommunityProject
         fields = ('projectName', 'interest', 'goal', 'blurb', 'duration', 'why', 'who', 'how', 'support', 'more', 'rewards', 'picture')
+
+class PaymentForm(forms.ModelForm):
+    amount = forms.FloatField()
+    
+    class Meta:
+        model = ('amount')

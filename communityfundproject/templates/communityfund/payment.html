@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Mallanna' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="{% static "communityfund/css/login.css" %}">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  	<nav class="navbar navbar-default navbar-inverse">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+	      </button>
+          <a class="navbar-brand" href="home.html">CommunityFund</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling-->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="/communityfund/find">Find a Project</a></li>
+            <li><a href="/communityfund/createproject"l>Create a Project</a></li> 
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <p>MESSAGES AREA</p>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span><span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <p>NOTIFICATION AREA</p>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profile<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/communityfund/profile/{{ user.username }}">My Profile</a></li>
+                <li><a href="/communityfund/editprofile">Edit Profile</a></li>
+                <li><a href="/communityfund/settings">Account Settings</a></li>
+                <li class="divider"></li>
+                <li><a href="/communityfund/logout">Log out</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+
+
+     <div class="container">
+      <form class="form-signin" id="payment_form" data-name="Payment Form" method="post" action="/communityfund/payment/{{ project_name }}" enctype="multipart/form-data">
+		{% csrf_token %}
+        <h2 class="form-signin-heading">Thank you for choosing to fund this project! </h2>
+        <br/>
+
+          <h3>Amount</h3>
+          <label for="amount" class="sr-only">Amount</label>
+          <input type="text" id="amount" class="form-control" placeholder="100" required autofocus>
+		  {{ payment_form.amount|add_class:"form-control"|attr:"placeholder:100"|attr:"required" }}
+          <br/>
+		  
+          <h3>Billing Address</h3>
+          <label for="firstname" class="sr-only">First Name</label>
+          <text type="text" id="firstname" class="form-control" placeholder="First Name" required autofocus>
+          <br/>
+          <label for="lastname" class="sr-only">Last Name</label>
+          <text type="text" id="lastname" class="form-control" placeholder="Last Name" required>
+          <br/>
+          <label for="address" class="sr-only">Address</label>
+          <text type="text" id="address" class="form-control" placeholder="Address" required>
+          <br/>
+          <label for="city" class="sr-only">City</label>
+          <text type="text" id="city" class="form-control" placeholder="City" required>
+          <br/>
+          <label for="province" class="sr-only">Province</label>
+          <text type="text" id="province" class="form-control" placeholder="Province" required>
+          <br/>
+          <label for="postalcode" class="sr-only">Postal Code</label>
+          <text type="text" id="postalcode" class="form-control" placeholder="A0A1B2" required>
+          <br/>
+
+
+          <h3>Payment</h3>
+          <label for="cardnumber" class="sr-only">Card Number</label>
+          <text type="text" id="cardnumber" class="form-control" placeholder="Card Number" required>
+          <br/>
+
+          <div class="mm">
+          <label for="month" class="sr-only">Expiry Month</label>
+          <text type="text" id="month" class="form-control" placeholder="MM" required>
+          <br/>
+          </div>
+          <div class="mm">
+           <label for="year" class="sr-only">Expiry Year</label>
+          <text type="text" id="year" class="form-control" placeholder="YY" required>
+          </div>
+          <br/>
+          
+          <div class="seccode">
+          <label for="securitycode" class="sr-only">Secuirty Code</label>
+          <text type="text" id="securitycode" class="form-control" placeholder="XXX" required>
+          <br/>
+          </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit Payment</button>
+
+      </form>
+    </div> <!-- /container -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  </body>
+</html>

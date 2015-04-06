@@ -13,4 +13,5 @@ urlpatterns = patterns('',
         url(r'^logout/$', views.user_logout, name='logout'),
         url(r'^about/$', views.about, name='about'),
         url(r'^profile/(?P<profile_name>[\w\-]+)/$', views.profile, name='profile'),
-        url(r'^projects/(?P<project_name>[\w\-]+)/$', views.projects, name='projects'))
+        url(r'^projects/(?P<project_name>[\w\-]+)/$', views.projects, name='projects'),
+        url(r'^payment/(?P<project_name>[\w\-]+)/$', views.payment, name='payment'))

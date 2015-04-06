@@ -2,9 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from communityfund.models import Communities, Interests, UserProfile, CommunityProject, Payment, Comment, ProjectComment, UserInterest
 from django.contrib.auth.models import User
-from communityfund.forms import UserForm, UserProfileForm, ProjectForm
+from communityfund.forms import UserForm, UserProfileForm, ProjectForm, PaymentForm
 from django.contrib.auth import authenticate, login, logout
 from datetime import datetime
+
 def index(request):
     context_dict = {'boldmessage': "We are powered by Django!"}
     return render(request, 'communityfund/index.html', context_dict)
@@ -200,4 +201,44 @@ def projects(request, project_name):
     except CommunityProject.DoesNotExist:
         pass
     return render(request, 'communityfund/project.html', context_dict)
+
+def payment(request, project_name):
+    if request.user.is_authenticated():
+        context_dict = {}
+        success = False
+        if request.method == 'POST':
+            payment_form = PaymentForm(data=request.POST)
+            if payment_form.is_valid():
+                project = CommunityProject.objects.all().filter(slug=project_name)[0]
+            
+                # Insert the payment info
+                payment = payment_form.save(commit=False)
+                payment.backer = request.user
+                payment.project = project
+                payment.timestamp = datetime.now()
+            
+                # Update the project info
+                CommunityProject.objects.all().filter(slug=project_name).update(amountFunded=project.amountFunded + payment.amount,
+                                                                                backers=project.backers+1)
+            
+                # Update the user's info (and the project initiator's if the project is fully funded)
+                UserProfile.objects.all().filter(user=request.user).update(reputation=request.user.reputation+1,
+                                                                           projectsFunded=request.user.projectsFunded+1)
+                if (project.amountFunded < project.goal):
+                    project_initiator = UserProfile.objects.all().filter(user=project.initiator)[0]
+                    UserProfile.objects.all().filter(user=project.initiator).update(reputation=project_initiator.reputation+10)
+            
+                payment.save()
+                success = True
+            else:
+                payment_form.errors
+        else:
+            payment_form = PaymentForm()
+        context_dict['payment_form'] = payment_form
+        context_dict['success'] = success
+        context_dict['project_name'] = project_name
+        return render(request, 'communityfund/payment.html')
+    else:
+        return HttpResponse("Restricted Page. Please login to access.")
+    
 # Create your views here.

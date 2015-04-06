@@ -35,8 +35,8 @@ class CommunityProject(models.Model):
     community = models.ForeignKey(Communities)
     interest = models.ForeignKey(Interests)
     initiator = models.ForeignKey(User)
-    goal = models.IntegerField()
-    amountFunded = models.IntegerField()
+    goal = models.FloatField()
+    amountFunded = models.FloatField()
     backers = models.IntegerField()
     duration = models.IntegerField()
     dateCreated = models.DateTimeField()
@@ -60,8 +60,7 @@ class CommunityProject(models.Model):
 class Payment(models.Model):
     backer = models.ForeignKey(User)
     project = models.ForeignKey(CommunityProject)
-    amount = models.IntegerField()
-    isDonation = models.BinaryField()
+    amount = models.FloatField()
     timestamp = models.DateField()
     
     def __unicode__(self):
