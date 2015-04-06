@@ -41,14 +41,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-          <a class="navbar-brand" href="home.html">CommunityFund</a>
+          <a class="navbar-brand" href="/home">CommunityFund</a>
         </div>
-
         <!-- Collect the nav links, forms, and other content for toggling-->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li><a href="find.html">Find a Project</a></li>
-            <li><a href="/communityfund/createproject"l>Create a Project</a></li> 
+           <ul class="nav navbar-nav">
+            <li><a href="/communityfund/find">Find a Project</a></li>
+            <li><a href="/communityfund/createproject">Create a Project</a></li> 
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
@@ -66,11 +65,11 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profile<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="communityfund/profile/{{ user.username }}">My Profile</a></li>
-                <li><a href="communityfund/editprofile">Edit Profile</a></li>
-                <li><a href="communityfund/settings">Account Settings</a></li>
+                <li><a href="/communityfund/profile/{{ user.username }}">My Profile</a></li>
+                <li><a href="/communityfund/editprofile">Edit Profile</a></li>
+                <li><a href="/communityfund/settings">Account Settings</a></li>
                 <li class="divider"></li>
-                <li><a href="communityfund/logout">Log out</a></li>
+                <li><a href="/communityfund/logout">Log out</a></li>
               </ul>
             </li>
           </ul>
@@ -140,7 +139,7 @@
 
     <!-- PROJECTS FUNDED -->
     <div class="container">
-      <h3><a href="projectsstarted.html">Projects Funded</a></h3>
+      <h3>Projects Funded</h3>
     </div>
 
     <div class="container-fluid">
