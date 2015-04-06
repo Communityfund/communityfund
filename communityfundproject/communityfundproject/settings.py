@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'communityfund',
     'rango',
     'widget_tweaks',
+    'mathfilters',
 )
 
 MIDDLEWARE_CLASSES = (
