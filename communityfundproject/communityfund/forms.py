@@ -39,4 +39,5 @@ class PaymentForm(forms.ModelForm):
     amount = forms.FloatField()
     
     class Meta:
-        model = ('amount')
+        model = Payment
+        fields = ('amount')
