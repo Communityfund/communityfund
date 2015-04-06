@@ -15,6 +15,12 @@ def about(request):
 
 def topprojects(request):
     return render(request, 'communityfund/top-projects.html')
+    
+def editprofile(request):
+    return render(request, 'communityfund/editprofile.html')
+
+def find(request):
+    return render(request, 'communityfund/find.html')
 
 def user_login(request):
     if request.method == 'POST':

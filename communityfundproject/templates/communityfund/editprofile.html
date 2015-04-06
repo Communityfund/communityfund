@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-{% load staticfiles %}
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home - CommunityFund</title>
+    <title>Edit Profile - CommunityFund</title>
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-	<!--Custom styles-->
-	<link rel="stylesheet" href="{% static "communityfund/css/home.css" %}">
-	<!--Font-->
-	<link href='http://fonts.googleapis.com/css?family=Mallanna' rel='stylesheet' type='text/css'>
+
+  <link href='http://fonts.googleapis.com/css?family=Mallanna' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="{% static "communityfund/css/createproject.css" %}">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -21,18 +20,17 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  {% if user.is_authenticated %}
   <body>
   	<nav class="navbar navbar-default navbar-inverse">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-		        <span class="sr-only">Toggle navigation</span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-	      </button>
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
           <a class="navbar-brand" href="/home">CommunityFund</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling-->
@@ -45,13 +43,13 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <p>Message Area</p>
+                <p>MESSAGES AREA</p>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span><span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <p>Notification Area</p>
+                <p>NOTIFICATION AREA</p>
               </ul>
             </li>
             <li class="dropdown">
@@ -68,71 +66,57 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-    
-    <div class="container-fluid">
 
-    	 <div class="row" style="margin-left: 40px;">
-        <h2>Projects Started</h2>
-      </div>
+    <div class="container">
+      <form>
+        <div class="row">
+          <label>First Name</label>
+        </div>
+        <div class="row">
+          <input id="firstname" type="text"></input>
+        </div>
+        <div class="row">
+          <label>Last Name</label>
+        </div>
+        <div class="row">
+          <input id="firstname" type="text"></input>
+        </div>
+        
+        <div class="row">
+          <label>About me</label>
+        </div>
+        <div class="row">
+          <textarea rows="12" cols="100"></textarea>
+        </div>
 
-    	<div class="row" >
-    		{% for project in ownprojects %}
-	    	<div class="project" style="border:black 2px solid">
-	          <h4> {{ project.projectName }}</h4>
-	          <a href=""><img src="" height="350" width="350" style="border: black solid 2px;"></a>
-	          <p> By {{ project.initiator }}</p>
-	          <p> Category: {{ project.interest }}</p>
-	          <p> Funding Received: {{ project.amountFunded }}</p>
-	          <p> Funding Target: {{ project.goal }}</p>
-	        </div>
-			{% endfor %}
+        <div class="row">
+          <label>Professional Skills</label>
+        </div>
+        <div class="row">
+          <textarea rows="12" cols="100"></textarea>
+        </div>
 
-	      </div><!--row-->
+        <div class="row">
+          <label>Interested in Funding</label>
+        </div>
+        <div class="row">
+          <textarea rows="12" cols="100"></textarea>
+        </div>
 
-	    <div class="row" style="margin-left: 40px;">
-	    	<h2>Projects I'm Funding</h2>
-	    </div>
+        <!--IMAGE UPLOAD-->
+        <div class="row">
+          <label>Profile Picture</label>
+          <input type="file" />
+        </div>
 
-	     <div class="row">
-			{% for project in contributed %}
-	    	<div class="project" style="border:black 2px solid">
-	          <h4> {{ project.projectName }}</h4>
-	          <a href=""><img src="" height="350" width="350" style="border: black solid 2px;"></a>
-	          <p> By {{ project.initiator }}</p>
-	          <p> Category: {{ project.interest }}</p>
-	          <p> Funding Received: {{ project.amountFunded }}</p>
-	          <p> Funding Target: {{ project.goal }}</p>
-	        </div>
-			{% endfor %}
-	    </div>
+        <button type="submit">Update Profile</button>
+      </form>
+    </div>
 
 
-	    <div class="row" style="margin-left: 40px;">
-	    	<h2>Interesting Projects</h2>
-	    </div>
-
-	    <div class="row">
-			{% for project in allprojects %}
-	    	<div class="project" style="border:black 2px solid">
-	          <h4> {{ project.projectName }}</h4>
-	          <a href=""><img src="" height="350" width="350" style="border: black solid 2px;"></a>
-	          <p> By {{ project.initiator }}</p>
-	          <p> Category: {{ project.interest }}</p>
-	          <p> Funding Received: {{ project.amountFunded }}</p>
-	          <p> Funding Target: {{ project.goal }}</p>
-	        </div>
-			{% endfor %}
-	    </div><!--row-->
-      <p><a href="/communityfund/next">See more</a></p>
-	  
-	</div><!--container-->
-
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   </body>
-   {% else %}
-  Test message.
-  {% endif %}
-</html>	
+</html>

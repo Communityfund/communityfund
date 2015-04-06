@@ -25,32 +25,22 @@
   </head>
   <body>
     <div class="container">
-	  <form id="login-form" class="form-signin" method="post" action="/communityfund/login/" enctype="multipart/form-data">
-		  {% csrf_token %}
-	      <h2 class="form-signin-heading">Please log in</h2>
-	      <label for="username" class="sr-only">Username</label>
-	      <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
-	      <label for="password" class="sr-only">Password</label>
-	      <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-	      <div class="checkbox">
-			  <label>
-				  <input type="checkbox" value="remember-me"> Remember me
-	          </label>
-	      </div>
-	      <input class="btn btn-lg btn-primary btn-block" type="submit" value="Sign in" />
-	      <!-- Error message box -->
-      	      	<div id = "errorMessage" style="visibility:hidden;"><center>
-		    <table style="background-color: black; border: 0px; border-radius: 10px; box-shadow: 0px 0px 5px black;" >
-          		<tr>
-        	 	<td id = "message" style="padding: 5px; color:#B5B5B5;"></td>
-          		</tr> 
-        	    </table></center>
-      		</div>
-	      <h4 style="padding-top:50px"> Don't have an account? </h4>
-	      <a href="/communityfund/signup"> Sign up</a>
-	  </form>
-    </div> <!-- /container -->
-	
+      <form class="form-signin">
+        <h2 class="form-signin-heading">Please log in</h2>
+        <br/>
+        
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <br/>
+        
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+        <a href="/communityfund/signup">Dont have an account? Sign up</a>
+      </form>
+    </div>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
