@@ -191,8 +191,6 @@ def projects(request, project_name):
         if p:
             p = p[0]
         u = p.initiator
-        if u:
-            u = u[0]
         profile = UserProfile.objects.all().filter(user=u)
         if profile:
             profile = profile[0]
