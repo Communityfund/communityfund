@@ -183,12 +183,14 @@ def profile(request, profile_name):
         pass
     return render(request, 'communityfund/profile.html', context_dict)
 
-def projects(request, project_name):
+def projects(request, project_slug):
     context_dict = {}
     
     try:
-        p = CommunityProject.objects.all().filter(slug=project_name)
-        u = CommunityProject.objects.all().filter(slug=project_name).values('initiator')
+        p = CommunityProject.objects.all().filter(slug=project_slug)
+        if p:
+            p = p[0]
+        u = CommunityProject.objects.all().filter(slug=project_slug).values('initiator')
         profile = UserProfile.objects.all().filter(user=u)
         
         context_dict['project'] = p
