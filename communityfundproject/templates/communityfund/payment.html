@@ -21,6 +21,7 @@
     <![endif]-->
   </head>
   <body>
+	{% if not success %}
   	<nav class="navbar navbar-default navbar-inverse">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -127,7 +128,9 @@
 
       </form>
     </div> <!-- /container -->
-
+	{% else %}
+	You have successfully paid.
+	{% endif %}
 
 
 
