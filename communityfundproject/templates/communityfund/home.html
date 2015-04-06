@@ -78,9 +78,9 @@
     	<div class="row" >
     		{% for project in ownprojects %}
 	    	<div class="project" style="border:black 2px solid">
-	          <h4> {{ project.projectName }}</h4>
+	          <h4> <a href="/communityfund/project/{{ project.slug }}">{{ project.projectName }}</a></h4>
 	          <a href=""><img src="" height="350" width="350" style="border: black solid 2px;"></a>
-	          <p> By {{ project.initiator }}</p>
+	          <p> By <a href="/communityfund/profile/{{ project.initiator }}">{{ project.initiator }}</a></p>
 	          <p> Category: {{ project.interest }}</p>
 	          <p> Funding Received: {{ project.amountFunded }}</p>
 	          <p> Funding Target: {{ project.goal }}</p>
