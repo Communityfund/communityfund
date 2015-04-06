@@ -242,7 +242,7 @@ def payment(request, project_name):
         context_dict['payment_form'] = payment_form
         context_dict['success'] = success
         context_dict['project_name'] = project_name
-        return render(request, 'communityfund/payment.html')
+        return render(request, 'communityfund/payment.html', context_dict)
     else:
         return HttpResponse("Restricted Page. Please login to access.")
     
