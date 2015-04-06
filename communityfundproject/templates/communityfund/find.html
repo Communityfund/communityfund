@@ -5,14 +5,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Edit Profile - CommunityFund</title>
+    <title>Find Projects - CommunityFund</title>
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
+  <link rel="stylesheet" href="{% static "communityfund/css/find.css" %}">
   <link href='http://fonts.googleapis.com/css?family=Mallanna' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="{% static "communityfund/css/createproject.css" %}">
+	<link rel="stylesheet" href="home.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,7 +32,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
-          </button>
+            </button>
           <a class="navbar-brand" href="/home">CommunityFund</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling-->
@@ -69,50 +70,64 @@
     </nav>
 
     <div class="container">
-      <form>
-        <div class="row">
-          <label>First Name</label>
-        </div>
-        <div class="row">
-          <input id="firstname" type="text"></input>
-        </div>
-        <div class="row">
-          <label>Last Name</label>
-        </div>
-        <div class="row">
-          <input id="firstname" type="text"></input>
-        </div>
-        
-        <div class="row">
-          <label>About me</label>
-        </div>
-        <div class="row">
-          <textarea rows="12" cols="100"></textarea>
-        </div>
+      
+      <div class="row">
+        <h1>What're you interested in funding?</h1>
+      </div>
+      <div class="row">
+        <ul class="list-inline">
+          <li><a href=""><h1>Arts &amp; Crafts</h1></a></li>
+          <li><a href=""><h1>Comics</h1></a></li>
+          <li><a href=""><h1>Community</h1></a></li>
+          <li><a href=""><h1>Dance</h1></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <ul class="list-inline">
+          <li><a href=""><h1>Design</h1></a></li>
+          <li><a href=""><h1>Education</h1></a></li>
+          <li><a href=""><h1>Emergencies</h1></a></li>
+          <li><a href=""><h1>Enviornment</h1></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <ul class="list-inline">
+          <li><a href=""><h1>Events</h1></a></li>
+          <li><a href=""><h1>Fashion</h1></a></li>
+          <li><a href=""><h1>Film &amp; Video</h1></a></li>
+          <li><a href=""><h1>Food</h1></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <ul class="list-inline">
+          <li><a href=""><h1>Games</h1></a></li>
+          <li><a href=""><h1>Journalism</h1></a></li>
+          <li><a href=""><h1>Music</h1></a></li>
+          <li><a href=""><h1>Photography</h1></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <ul class="list-inline">
+          <li><a href=""><h1>Publishing</h1></a></li>
+          <li><a href=""><h1>Technology</h1></a></li>
+          <li><a href=""><h1>Theatre</h1></a></li>
+        </ul>
+      </div>
 
-        <div class="row">
-          <label>Professional Skills</label>
-        </div>
-        <div class="row">
-          <textarea rows="12" cols="100"></textarea>
-        </div>
-
-        <div class="row">
-          <label>Interested in Funding</label>
-        </div>
-        <div class="row">
-          <textarea rows="12" cols="100"></textarea>
-        </div>
-
-        <!--IMAGE UPLOAD-->
-        <div class="row">
-          <label>Profile Picture</label>
-          <input type="file" />
-        </div>
-
-        <button type="submit">Update Profile</button>
-      </form>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
