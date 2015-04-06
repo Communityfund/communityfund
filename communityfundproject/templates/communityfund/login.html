@@ -25,16 +25,17 @@
   </head>
   <body>
     <div class="container">
-      <form class="form-signin">
+	  <form class="form-signin" id="login_form" method="post" action="/communityfund/login/" enctype="multipart/form-data">
+	    {% csrf_token %}
         <h2 class="form-signin-heading">Please log in</h2>
         <br/>
         
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="username" class="sr-only">Username</label>
+        <input type="text" id="username" class="form-control" placeholder="Username" required autofocus>
         <br/>
         
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" id="password" class="form-control" placeholder="Password" required>
         
         <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
         <a href="/communityfund/signup">Dont have an account? Sign up</a>
