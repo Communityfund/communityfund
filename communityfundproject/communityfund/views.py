@@ -215,7 +215,7 @@ def payment(request, project_name):
             payment_form = PaymentForm(data=request.POST)
             if payment_form.is_valid():
                 project = CommunityProject.objects.get(slug=project_name)
-            
+                profile = UserProfile.objects.get(user=request.user)
                 # Insert the payment info
                 payment = payment_form.save(commit=False)
                 payment.backer = request.user
@@ -227,8 +227,8 @@ def payment(request, project_name):
                                                                                 backers=project.backers+1)
             
                 # Update the user's info (and the project initiator's if the project is fully funded)
-                UserProfile.objects.all().filter(user=request.user).update(reputation=request.user.reputation+1,
-                                                                           projectsFunded=request.user.projectsFunded+1)
+                UserProfile.objects.all().filter(user=request.user).update(reputation=profile.reputation+1,
+                                                                           projectsFunded=profile.projectsFunded+1)
                 if (project.amountFunded < project.goal):
                     project_initiator = UserProfile.objects.all().filter(user=project.initiator)[0]
                     UserProfile.objects.all().filter(user=project.initiator).update(reputation=project_initiator.reputation+10)
