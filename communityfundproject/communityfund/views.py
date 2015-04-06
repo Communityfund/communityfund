@@ -193,7 +193,7 @@ def projects(request, project_name):
         u = CommunityProject.objects.all().filter(slug=project_name).values('initiator')
         if u:
             u = u[0]
-        profile = UserProfile.objects.all().filter(user=u.username)
+        profile = UserProfile.objects.all().filter(user=u['username'])
         if profile:
             profile = profile[0]
         
