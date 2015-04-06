@@ -187,8 +187,8 @@ def projects(request, project_name):
     context_dict = {}
     
     try:
-        p = CommunityProject.objects.all().filter(projectName=project_name)
-        u = CommunityProject.objects.all().filter(projectName=project_name).values('initiator')
+        p = CommunityProject.objects.all().filter(slug=project_name)
+        u = CommunityProject.objects.all().filter(slug=project_name).values('initiator')
         profile = UserProfile.objects.all().filter(user=u)
         
         context_dict['project'] = p
