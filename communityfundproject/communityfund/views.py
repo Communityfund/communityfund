@@ -14,9 +14,6 @@ def about(request):
 
 def topprojects(request):
     return render(request, 'communityfund/top-projects.html')
-    
-def projects(request):
-    return render(request, 'communityfund/projects.html')
 
 def user_login(request):
     if request.method == 'POST':
@@ -185,4 +182,17 @@ def profile(request, profile_name):
     except (User.DoesNotExist, UserProfile.DoesNotExist) as e:
         pass
     return render(request, 'communityfund/profile.html', context_dict)
+
+def projects(request, project_name):
+    context_dict = {}
+    
+    try:
+        p = CommunityProject.objects.all().filter(projectName=project_name)
+        profile = UserProfile.objects.all().filter(user=p.initiator)
+        
+        context_dict['project'] = p
+        context_dict['profile'] = profile
+    except CommunityProject.DoesNotExist:
+        pass
+    return render(request, 'communityfund/project.html', context_dict)
 # Create your views here.
