@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from communityfund.forms import UserForm, UserProfileForm, ProjectForm, PaymentForm
 from django.contrib.auth import authenticate, login, logout
 from datetime import datetime
+from django.db.models import Sum
 
 def index(request):
     context_dict = {'boldmessage': "We are powered by Django!"}
