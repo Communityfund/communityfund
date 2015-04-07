@@ -253,7 +253,13 @@ def payment(request, project_name):
 def settings(request):
     if request.user.is_authenticated():
         context_dict = {}
+        projects_started = CommunityProject.objects.all().filter(initiator=request.user).count()
+        projects_funded = Payment.objects.all().filter(backer=request.user).distinct().count()
+        money_raised = Payment.objects.all().filter(backer=request.user).aggregate(Sum('amount'))
         
+        context_dict['projects_started'] = projects_started
+        context_dict['projects_funded'] = projects_funded
+        context_dict['money_raised'] = money_raised
         return render(request, 'communityfund/settings.html', context_dict)
     else:
         return HttpResponse("Restricted Page. Please login to access.")
