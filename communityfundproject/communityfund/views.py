@@ -109,6 +109,10 @@ def createproject(request):
                 project.initiator = request.user
                 project.community = UserProfile.objects.all().filter(user=request.user)[0].community
                 project.dateCreated = datetime.now()
+                
+                if 'picture' in request.FILES:
+                    project.picture = request.FILES['picture']
+                    
                 project.save()
                 success = True
             else:
