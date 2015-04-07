@@ -38,7 +38,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 	      </button>
-          <a class="navbar-brand" href="home.html">CommunityFund</a>
+          <a class="navbar-brand" href="/communityfund/home">CommunityFund</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling-->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -86,7 +86,7 @@
           <h1>{{ project.projectName }}</h1>
           <h3>Overview:</h3>
           <ul>
-            <li>Started by: <a href="communityfund/profile/{{ project.initiator }}">{{ project.initiator }}</a></li>
+            <li>Started by: <a href="/communityfund/profile/{{ project.initiator }}">{{ project.initiator }}</a></li>
             <li>{{ project.initiator }} rep: {{ profile.reputation }}</li>
             <li>{{ project.interest }}</li>
             <li>Funded: ${{ project.amountFunded }} / ${{ project.goal }}</li>

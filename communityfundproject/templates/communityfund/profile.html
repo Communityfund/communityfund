@@ -126,7 +126,7 @@
       <div class="row">
 		{% for project in user_projects %}
         <div class="project" style="border:black 2px solid">
-            <h4><a href="communityfund/project/{{ project.projectSlug }}">{{ project.projectName }}</a></h4>
+            <h4><a href="/communityfund/project/{{ project.projectSlug }}">{{ project.projectName }}</a></h4>
             <a href=""><img src="" height="350" width="350" style="border: black solid 2px;"></a>
             <p> {{ project.interest }} </p>
             <p> ${{ project.amountFunded }} funded out of ${{ project.goal }}</p>
@@ -146,7 +146,7 @@
       <div class="row">
 		{% for project in contributed %}
         <div class="project" style="border:black 2px solid">
-            <h4><a href="communityfund/project/{{ project.projectSlug }}">{{ project.projectName }}</a></h4>
+            <h4><a href="/communityfund/project/{{ project.projectSlug }}">{{ project.projectName }}</a></h4>
             <a href=""><img src="" height="350" width="350" style="border: black solid 2px;"></a>
             <p> {{ project.interest }} </p>
             <p> ${{ project.amountFunded }} funded out of ${{ project.goal }}</p>
