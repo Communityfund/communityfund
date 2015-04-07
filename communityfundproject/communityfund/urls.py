@@ -16,4 +16,5 @@ urlpatterns = patterns('',
         url(r'^editprofile/$', views.editprofile, name='editprofile'),
         url(r'^profile/(?P<profile_name>[\w\-]+)/$', views.profile, name='profile'),
         url(r'^projects/(?P<project_name>[\w\-]+)/$', views.projects, name='projects'),
-        url(r'^payment/(?P<project_name>[\w\-]+)/$', views.payment, name='payment'))
+        url(r'^payment/(?P<project_name>[\w\-]+)/$', views.payment, name='payment'),
+        url(r'^settings/$', views.settings, name='settings'))

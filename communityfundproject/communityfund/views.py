@@ -249,5 +249,12 @@ def payment(request, project_name):
         return render(request, 'communityfund/payment.html', context_dict)
     else:
         return HttpResponse("Restricted Page. Please login to access.")
-    
+
+def settings(request):
+    if request.user.is_authenticated():
+        context_dict = {}
+        
+        return render(request, 'communityfund/settings.html', context_dict)
+    else:
+        return HttpResponse("Restricted Page. Please login to access.")
 # Create your views here.
